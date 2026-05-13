@@ -112,7 +112,7 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator", "Blender"],
     files: [],
     color: "from-purple-800 to-pink-600",
-    image: "/images/mirror-ado-project.jpg",
+    image: "/images/Poster-ADO-MIRRORweb.jpg",
     translations: {
       en: {
         title: "Mirror - ADO",
@@ -136,12 +136,12 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign", "Lightroom"],
     files: [],
     color: "from-orange-700 to-red-600",
-    image: "/images/24kmagic_images/bruno_mars_album_cover.jpg",
+    image: "/images/bruno-mars-album cover, finesse para web.jpg",
     gallery: [
-      "/images/24kmagic_images/bruno_mars_album_cover.jpg",
-      "/images/24kmagic_images/free_vinyl_mockup_2.jpg",
-      "/images/24kmagic_images/vinil_1_bruno_mars.jpg",
-      "/images/24kmagic_images/vinil_2_bruno_mars.jpg",
+      "/images/bruno-mars-album cover, finesse para web.jpg",
+      "/images/Free_Vinyl_Mockup_2.jpg",
+      "/images/VInil-1-bruno-mars.jpg",
+      "/images/VInil-2-bruno-mars.jpg",
     ],
     translations: {
       en: {
@@ -165,11 +165,12 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator"],
     files: [],
     color: "from-blue-700 to-cyan-600",
-    image: "/images/zumbis-project.jpg",
+    image: "/images/Virtual-INsanity.jpg",
     gallery: [
-      "/images/zumbis-project.jpg",
-      "/images/zumbis-project-2.png",
-      "/images/zumbis-project-3.png",
+      "/images/Virtual-INsanity.jpg",
+      "/images/Poster_Glued_To_Wall_Mockup_1.jpg",
+      "/images/Free_Citylight_Poster_Mockup_1.png",
+      "/images/Free_Citylight_Poster_Mockup_VI.png",
     ],
     translations: {
       en: {
@@ -193,13 +194,13 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign"],
     files: [],
     color: "from-fuchsia-700 to-rose-600",
-    image: "/images/chapeuzinho-project.jpg",
+    image: "/images/regenerated_image_1778211615718.jpg",
     gallery: [
-      "/images/chapeuzinho-project.jpg",
-      "/images/chapeuzinho-project-2.png",
-      "/images/chapeuzinho-project-3.jpg",
-      "/images/chapeuzinho-project-4.png",
-      "/images/chapeuzinho-project-5.jpg",
+      "/images/regenerated_image_1778211615718.jpg",
+      "/images/regenerated_image_1778212354434.png",
+      "/images/regenerated_image_1778212356032.jpg",
+      "/images/regenerated_image_1778213078006.png",
+      "/images/regenerated_image_1778213157796.jpg",
     ],
     translations: {
       en: {

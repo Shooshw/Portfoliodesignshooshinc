@@ -82,12 +82,12 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
               <div className="relative h-[420px] overflow-hidden bg-[#0D0D0D]">
                 {isAquora ? (
                    <>
-                     <img src="/images/aquora-logo.png" alt="Aquora" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain p-8 bg-gradient-to-tr from-[#fdfbfb] via-[#e2ebf0] to-[#fdfbfb] transition-transform duration-700 z-10 group-hover:opacity-0" />
-                     <video src="/images/aquora-video.mp4" loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.10] group-hover:scale-[1.13] transition-transform duration-700 z-0" />
+                     <img src="/images/regenerated_image_1778466713759.png" alt="Aquora" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain p-8 bg-gradient-to-tr from-[#fdfbfb] via-[#e2ebf0] to-[#fdfbfb] transition-transform duration-700 z-10 group-hover:opacity-0" />
+                     <video src="/images/list-9-16.mp4" loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.10] group-hover:scale-[1.13] transition-transform duration-700 z-0" />
                    </>
                 ) : isLol ? (
                    <>
-                     <video src="/images/neeko-live-wallpaper.mp4" autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.5] transition-transform duration-700 z-0" />
+                     <video src="/images/1668457441-1668457441-neeko-the-curious-chameleon-live-wallpaper.mp4" autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.5] transition-transform duration-700 z-0" />
                    </>
                 ) : project.image ? (
                   <ImageWithFallback
