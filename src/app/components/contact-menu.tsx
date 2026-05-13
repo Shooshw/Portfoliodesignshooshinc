@@ -27,8 +27,7 @@ export function ContactMenu({ variant = "desktop" }: ContactMenuProps) {
     }
     if (isOpen) {
       document.addEventListener("mousedown", handleClickOutside);
-      return () =>
-        document.removeEventListener("mousedown", handleClickOutside);
+      return () => document.removeEventListener("mousedown", handleClickOutside);
     }
   }, [isOpen]);
 
@@ -59,9 +58,7 @@ export function ContactMenu({ variant = "desktop" }: ContactMenuProps) {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={`flex items-center gap-2 px-6 py-2.5 rounded-full text-[0.65rem] font-bold tracking-widest uppercase transition-all active:scale-95 ${
-            isDark
-              ? "bg-[#F2F2F0] text-[#0D0D0D]"
-              : "bg-[#0D0D0D] text-[#F5F5F3]"
+            isDark ? "bg-[#F2F2F0] text-[#0D0D0D]" : "bg-[#0D0D0D] text-[#F5F5F3]"
           }`}
         >
           <Calendar size={14} />
@@ -80,13 +77,8 @@ export function ContactMenu({ variant = "desktop" }: ContactMenuProps) {
                 onClick={handleContactPage}
                 className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl transition-all text-left group ${hoverBg}`}
               >
-                <div
-                  className={`p-2 rounded-lg ${isDark ? "bg-white/5" : "bg-black/5"}`}
-                >
-                  <Send
-                    size={16}
-                    className={`transition-colors group-hover:text-[#C8392B] ${textMuted}`}
-                  />
+                <div className={`p-2 rounded-lg ${isDark ? "bg-white/5" : "bg-black/5"}`}>
+                  <Send size={16} className={`transition-colors group-hover:text-[#C8392B] ${textMuted}`} />
                 </div>
                 <div>
                   <p className={`text-sm font-semibold ${textMain}`}>
@@ -99,21 +91,14 @@ export function ContactMenu({ variant = "desktop" }: ContactMenuProps) {
                 onClick={handleWhatsApp}
                 className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl transition-all text-left mt-1 group ${hoverBg}`}
               >
-                <div
-                  className={`p-2 rounded-lg ${isDark ? "bg-white/5" : "bg-black/5"}`}
-                >
-                  <MessageCircle
-                    size={16}
-                    className={`transition-colors group-hover:text-[#C8392B] ${textMuted}`}
-                  />
+                <div className={`p-2 rounded-lg ${isDark ? "bg-white/5" : "bg-black/5"}`}>
+                  <MessageCircle size={16} className={`transition-colors group-hover:text-[#C8392B] ${textMuted}`} />
                 </div>
                 <div className="flex-1">
                   <p className={`text-sm font-semibold ${textMain}`}>
                     {t("contact.whatsapp") || "WhatsApp"}
                   </p>
-                  <p className={`text-[0.65rem] mt-0.5 ${textMuted}`}>
-                    {whatsappDisplay}
-                  </p>
+                  <p className={`text-[0.65rem] mt-0.5 ${textMuted}`}>{whatsappDisplay}</p>
                 </div>
               </button>
 
@@ -121,21 +106,14 @@ export function ContactMenu({ variant = "desktop" }: ContactMenuProps) {
                 onClick={handleCalendar}
                 className={`w-full flex items-center gap-4 px-4 py-3 rounded-xl transition-all text-left mt-1 group ${hoverBg}`}
               >
-                <div
-                  className={`p-2 rounded-lg ${isDark ? "bg-white/5" : "bg-black/5"}`}
-                >
-                  <Calendar
-                    size={16}
-                    className={`transition-colors group-hover:text-[#C8392B] ${textMuted}`}
-                  />
+                <div className={`p-2 rounded-lg ${isDark ? "bg-white/5" : "bg-black/5"}`}>
+                  <Calendar size={16} className={`transition-colors group-hover:text-[#C8392B] ${textMuted}`} />
                 </div>
                 <div className="flex-1">
                   <p className={`text-sm font-semibold ${textMain}`}>
                     {t("contact.calcom") || "Agendar reunião"}
                   </p>
-                  <p className={`text-[0.65rem] mt-0.5 ${textMuted}`}>
-                    via Cal.com
-                  </p>
+                  <p className={`text-[0.65rem] mt-0.5 ${textMuted}`}>via Cal.com</p>
                 </div>
               </button>
             </motion.div>
@@ -151,9 +129,7 @@ export function ContactMenu({ variant = "desktop" }: ContactMenuProps) {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`w-full flex items-center justify-center gap-3 px-6 py-4 rounded-2xl font-sans text-xs font-bold tracking-[0.15em] uppercase border transition-all active:scale-95 shadow-lg ${
-          isDark
-            ? "bg-[#F2F2F0]/5 border-[#F2F2F0]/10 text-[#F2F2F0]"
-            : "bg-white border-[#0D0D0D]/10 text-[#0D0D0D]"
+          isDark ? "bg-[#F2F2F0]/5 border-[#F2F2F0]/10 text-[#F2F2F0]" : "bg-white border-[#0D0D0D]/10 text-[#0D0D0D]"
         }`}
       >
         <Calendar size={16} />
@@ -187,9 +163,7 @@ export function ContactMenu({ variant = "desktop" }: ContactMenuProps) {
                 <p className={`text-[0.9rem] font-semibold ${textMain}`}>
                   {t("contact.whatsapp") || "WhatsApp"}
                 </p>
-                <p className={`text-[0.7rem] ${textMuted}`}>
-                  {whatsappDisplay}
-                </p>
+                <p className={`text-[0.7rem] ${textMuted}`}>{whatsappDisplay}</p>
               </div>
             </button>
 

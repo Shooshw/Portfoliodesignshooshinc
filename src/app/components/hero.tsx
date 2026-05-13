@@ -19,49 +19,19 @@ function BitmapDots({ isDark }: { isDark: boolean }) {
   );
 }
 
-function JapaneseGlyphs({
-  isDark,
-  scrollYProgress,
-}: {
-  isDark: boolean;
-  scrollYProgress: any;
-}) {
+function JapaneseGlyphs({ isDark, scrollYProgress }: { isDark: boolean; scrollYProgress: any }) {
   const textColor = isDark ? "text-[#F2F2F0]/5" : "text-[#0D0D0D]/5";
-
+  
   const y1 = useTransform(scrollYProgress, [0, 1], [0, -100]);
   const y2 = useTransform(scrollYProgress, [0, 1], [0, 100]);
   const rotate1 = useTransform(scrollYProgress, [0, 1], [0, 10]);
   const rotate2 = useTransform(scrollYProgress, [0, 1], [0, -10]);
 
   const items = [
-    {
-      char: "創",
-      pos: "top-[6%] left-[4%]",
-      size: "text-[clamp(6rem,13vw,11rem)]",
-      y: y1,
-      rotate: rotate1,
-    },
-    {
-      char: "造",
-      pos: "top-[10%] right-[4%]",
-      size: "text-[clamp(4rem,9vw,8rem)]",
-      y: y2,
-      rotate: rotate2,
-    },
-    {
-      char: "渋",
-      pos: "bottom-[12%] left-[2%]",
-      size: "text-[clamp(5rem,11vw,10rem)]",
-      y: y2,
-      rotate: rotate2,
-    },
-    {
-      char: "谷",
-      pos: "bottom-[8%] right-[3%]",
-      size: "text-[clamp(3rem,7vw,6rem)]",
-      y: y1,
-      rotate: rotate1,
-    },
+    { char: "創", pos: "top-[6%] left-[4%]", size: "text-[clamp(6rem,13vw,11rem)]", y: y1, rotate: rotate1 },
+    { char: "造", pos: "top-[10%] right-[4%]", size: "text-[clamp(4rem,9vw,8rem)]", y: y2, rotate: rotate2 },
+    { char: "渋", pos: "bottom-[12%] left-[2%]", size: "text-[clamp(5rem,11vw,10rem)]", y: y2, rotate: rotate2 },
+    { char: "谷", pos: "bottom-[8%] right-[3%]", size: "text-[clamp(3rem,7vw,6rem)]", y: y1, rotate: rotate1 },
   ];
   return (
     <>
@@ -78,13 +48,7 @@ function JapaneseGlyphs({
   );
 }
 
-function CoordStrip({
-  isDark,
-  pos,
-}: {
-  isDark: boolean;
-  pos: "top" | "bottom";
-}) {
+function CoordStrip({ isDark, pos }: { isDark: boolean; pos: "top" | "bottom" }) {
   const items =
     pos === "top"
       ? ["PORTFOLIO ©2026", "SHOOSH.INC", "DESIGN STUDIO"]
@@ -95,11 +59,7 @@ function CoordStrip({
         isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40"
       } ${pos === "top" ? "top-8" : "bottom-8"}`}
     >
-      {items.map((item, i) => (
-        <span key={i} className={i === 1 ? "hidden md:inline" : ""}>
-          {item}
-        </span>
-      ))}
+      {items.map((item, i) => <span key={i} className={i === 1 ? "hidden md:inline" : ""}>{item}</span>)}
     </div>
   );
 }
@@ -110,7 +70,7 @@ export function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end start"],
+    offset: ["start start", "end start"]
   });
 
   const bg = isDark ? "bg-[#0D0D0D]" : "bg-[#F5F5F3]";
@@ -145,14 +105,8 @@ export function Hero() {
           <div className="space-y-3">
             {["BRANDING", "VISUAL ID", "CODE", "MOTION"].map((item, i) => (
               <div key={i} className="flex items-center gap-3">
-                <div
-                  className={`w-1 h-1 rounded-full ${i === 2 ? "bg-[#C8392B]" : "bg-current opacity-30"}`}
-                />
-                <span
-                  className={`text-[0.6rem] font-bold tracking-[0.2em] font-sans ${textMuted}`}
-                >
-                  {item}
-                </span>
+                <div className={`w-1 h-1 rounded-full ${i === 2 ? "bg-[#C8392B]" : "bg-current opacity-30"}`} />
+                <span className={`text-[0.6rem] font-bold tracking-[0.2em] font-sans ${textMuted}`}>{item}</span>
               </div>
             ))}
           </div>
@@ -167,16 +121,8 @@ export function Hero() {
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, 50]) }}
           className={`p-6 rounded-2xl border backdrop-blur-sm shadow-sm text-center ${panelBg} ${borderFaint}`}
         >
-          <p
-            className={`text-[0.5rem] tracking-[0.3em] uppercase mb-1 ${textMuted}`}
-          >
-            Stamp
-          </p>
-          <p
-            className={`font-display text-4xl italic font-semibold leading-none ${textMain}`}
-          >
-            13
-          </p>
+          <p className={`text-[0.5rem] tracking-[0.3em] uppercase mb-1 ${textMuted}`}>Stamp</p>
+          <p className={`font-display text-4xl italic font-semibold leading-none ${textMain}`}>13</p>
         </motion.div>
       </div>
 
@@ -189,23 +135,15 @@ export function Hero() {
         >
           {/* Overline */}
           <div className="flex items-center justify-center gap-4 mb-8">
-            <div
-              className={`h-px w-12 ${isDark ? "bg-[#F2F2F0]/20" : "bg-[#0D0D0D]/20"}`}
-            />
-            <p
-              className={`font-sans text-[0.65rem] font-bold tracking-[0.4em] uppercase ${textMuted}`}
-            >
+            <div className={`h-px w-12 ${isDark ? "bg-[#F2F2F0]/20" : "bg-[#0D0D0D]/20"}`} />
+            <p className={`font-sans text-[0.65rem] font-bold tracking-[0.4em] uppercase ${textMuted}`}>
               ✦ Digital Portfolio ✦
             </p>
-            <div
-              className={`h-px w-12 ${isDark ? "bg-[#F2F2F0]/20" : "bg-[#0D0D0D]/20"}`}
-            />
+            <div className={`h-px w-12 ${isDark ? "bg-[#F2F2F0]/20" : "bg-[#0D0D0D]/20"}`} />
           </div>
 
           <h1 className="relative inline-block mb-12">
-            <span
-              className={`block font-display font-semibold italic text-[clamp(4.5rem,18vw,14rem)] tracking-tighter leading-[0.85] ${textMain}`}
-            >
+            <span className={`block font-display font-semibold italic text-[clamp(4.5rem,18vw,14rem)] tracking-tighter leading-[0.85] ${textMain}`}>
               Shoosh.inc
             </span>
             <motion.div
@@ -217,55 +155,32 @@ export function Hero() {
           </h1>
 
           <div className="flex flex-col md:flex-row items-center justify-center gap-6 md:gap-14 mb-14">
-            <p
-              className={`font-sans text-sm md:text-base font-light max-w-md md:text-left leading-relaxed ${textMuted}`}
-            >
+             <p className={`font-sans text-sm md:text-base font-light max-w-md md:text-left leading-relaxed ${textMuted}`}>
               {t("hero.subtitle")}
             </p>
             <div className="h-12 w-px bg-current opacity-10 hidden md:block" />
             <div className="text-center md:text-left">
-              <p
-                className={`font-sans text-[0.65rem] font-bold tracking-[0.2em] uppercase mb-1 ${textMuted}`}
-              >
-                Based in
-              </p>
-              <p
-                className={`font-sans text-xs font-semibold uppercase ${textMain}`}
-              >
-                São Paulo, Brazil
-              </p>
+              <p className={`font-sans text-[0.65rem] font-bold tracking-[0.2em] uppercase mb-1 ${textMuted}`}>Based in</p>
+              <p className={`font-sans text-xs font-semibold uppercase ${textMain}`}>São Paulo, Brazil</p>
             </div>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
             <motion.button
-              onClick={() =>
-                document
-                  .getElementById("projects")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
               className={`group relative overflow-hidden px-10 py-5 rounded-2xl font-sans font-bold text-xs uppercase tracking-[0.2em] transition-all shadow-xl hover:shadow-2xl active:scale-[0.98] ${
-                isDark
-                  ? "bg-[#F2F2F0] text-[#0D0D0D]"
-                  : "bg-[#0D0D0D] text-white"
+                isDark ? "bg-[#F2F2F0] text-[#0D0D0D]" : "bg-[#0D0D0D] text-white"
               }`}
               whileHover={{ y: -4 }}
             >
               <span className="relative z-10 flex items-center gap-3">
                 {t("hero.cta")}
-                <ArrowDown
-                  size={14}
-                  className="transition-transform group-hover:translate-y-1"
-                />
+                <ArrowDown size={14} className="transition-transform group-hover:translate-y-1" />
               </span>
             </motion.button>
 
             <motion.button
-              onClick={() =>
-                document
-                  .getElementById("contact")
-                  ?.scrollIntoView({ behavior: "smooth" })
-              }
+              onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
               className={`px-10 py-5 rounded-2xl font-sans font-bold text-xs uppercase tracking-[0.2em] border transition-all hover:bg-current/5 ${textMain} ${borderFaint}`}
               whileHover={{ y: -4 }}
             >
@@ -277,9 +192,7 @@ export function Hero() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-[10]">
-        <p
-          className={`font-sans text-[0.6rem] font-bold tracking-[0.3em] uppercase rotate-90 origin-left ml-3 ${textMuted}`}
-        >
+        <p className={`font-sans text-[0.6rem] font-bold tracking-[0.3em] uppercase rotate-90 origin-left ml-3 ${textMuted}`}>
           Scroll
         </p>
         <motion.div

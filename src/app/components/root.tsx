@@ -33,12 +33,10 @@ export function Root() {
   const text = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
 
   return (
-    <div
-      className={`min-h-screen transition-colors duration-700 ${bg} ${text}`}
-    >
+    <div className={`min-h-screen transition-colors duration-700 ${bg} ${text}`}>
       {/* Progress Bar Container */}
       <div className="fixed top-0 left-0 right-0 z-[250] h-1.5 w-full bg-transparent overflow-hidden">
-        <motion.div
+        <motion.div 
           className="h-full bg-[#C8392B] origin-left shadow-[0_0_10px_#C8392B]"
           style={{ width: `${scrollProgress}%` }}
         />

@@ -111,10 +111,7 @@ function ParallaxProjectCard({
       </motion.div>
       <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/40 backdrop-blur-[2px]">
         {/* Hover interaction hint */}
-        <ArrowUpRight
-          size={24}
-          className="text-[#00f2ff] scale-75 group-hover:scale-100 transition-transform duration-500"
-        />
+        <ArrowUpRight size={24} className="text-[#00f2ff] scale-75 group-hover:scale-100 transition-transform duration-500" />
       </div>
     </motion.div>
   );
@@ -146,26 +143,20 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
   const content = {
     pt: {
       musicJamTitle: "MUSIC JAM",
-      musicJamDesc:
-        "Inspirado pelo meu vasto repertório musical, iniciei um projeto de criação de capas de músicas e álbuns que envolvessem os que amam aquele artista, não só pelos ouvidos mas junto aos olhos.",
+      musicJamDesc: "Inspirado pelo meu vasto repertório musical, iniciei um projeto de criação de capas de músicas e álbuns que envolvessem os que amam aquele artista, não só pelos ouvidos mas junto aos olhos.",
       indieSynthTitle: "REVISTA INDIESYNTH",
-      indieSynthDesc1:
-        "Produção de uma marca sobre jogos. Uma edição especial nostálgica aos antigos consoles portáteis. Feito um conteúdo exclusivo com poster especial na temática CyberCity.",
-      indieSynthDesc2:
-        "Este projeto de branding foca em uma estética analógica misturada ao ciberespaço, explorando formas densas, layouts editoriais ousados e tipografias vibrantes. Uma celebração ao legado indie em mídia impressa.",
+      indieSynthDesc1: "Produção de uma marca sobre jogos. Uma edição especial nostálgica aos antigos consoles portáteis. Feito um conteúdo exclusivo com poster especial na temática CyberCity.",
+      indieSynthDesc2: "Este projeto de branding foca em uma estética analógica misturada ao ciberespaço, explorando formas densas, layouts editoriais ousados e tipografias vibrantes. Uma celebração ao legado indie em mídia impressa.",
     },
     en: {
       musicJamTitle: "MUSIC JAM",
-      musicJamDesc:
-        "Inspired by my vast musical repertoire, I started a project creating music and album covers that would engage those who love that artist, not only through their ears but also their eyes.",
+      musicJamDesc: "Inspired by my vast musical repertoire, I started a project creating music and album covers that would engage those who love that artist, not only through their ears but also their eyes.",
       indieSynthTitle: "INDIESYNTH MAGAZINE",
-      indieSynthDesc1:
-        "Production of a gaming brand. A nostalgic special edition dedicated to old portable consoles. An exclusive content piece was created featuring a special CyberCity-themed poster.",
-      indieSynthDesc2:
-        "This branding project focuses on an analog aesthetic mixed with cyberspace, exploring dense shapes, bold editorial layouts, and vibrant typography. A celebration of the indie legacy in print media.",
-    },
+      indieSynthDesc1: "Production of a gaming brand. A nostalgic special edition dedicated to old portable consoles. An exclusive content piece was created featuring a special CyberCity-themed poster.",
+      indieSynthDesc2: "This branding project focuses on an analog aesthetic mixed with cyberspace, exploring dense shapes, bold editorial layouts, and vibrant typography. A celebration of the indie legacy in print media.",
+    }
   };
-
+  
   const text = content[language];
 
   return (
@@ -205,41 +196,30 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center">
               {musicJamProjects.map((project) => {
-                const translatedTitle =
-                  project.translations?.[language]?.title || project.title;
-                const translatedCategory =
-                  project.translations?.[language]?.category ||
-                  project.category;
+                const translatedTitle = project.translations?.[language]?.title || project.title;
+                const translatedCategory = project.translations?.[language]?.category || project.category;
                 return (
-                  <div
-                    key={project.id}
-                    className="flex flex-col items-center justify-center w-full"
-                  >
-                    <ParallaxProjectCard
-                      project={project}
-                      onClick={() => onProjectClick(project)}
-                      t={t}
-                      aspectRatio={"3/4"}
-                      objectFit={"contain"}
-                      imageInset={0}
-                      isPoster={true}
-                      maxWidth={"85%"}
-                    />
-                    <div className="mt-6 text-center max-w-[85%]">
-                      <h3
-                        className={`font-bold text-sm tracking-wide ${textPrimary}`}
-                      >
-                        {translatedTitle}
-                      </h3>
-                      <p
-                        className={`text-[0.65rem] uppercase tracking-widest opacity-50 mt-1 ${textPrimary}`}
-                      >
-                        {translatedCategory}
-                      </p>
-                    </div>
+                <div key={project.id} className="flex flex-col items-center justify-center w-full">
+                  <ParallaxProjectCard
+                    project={project}
+                    onClick={() => onProjectClick(project)}
+                    t={t}
+                    aspectRatio={"3/4"}
+                    objectFit={"contain"}
+                    imageInset={0}
+                    isPoster={true}
+                    maxWidth={"85%"}
+                  />
+                  <div className="mt-6 text-center max-w-[85%]">
+                    <h3 className={`font-bold text-sm tracking-wide ${textPrimary}`}>
+                      {translatedTitle}
+                    </h3>
+                    <p className={`text-[0.65rem] uppercase tracking-widest opacity-50 mt-1 ${textPrimary}`}>
+                      {translatedCategory}
+                    </p>
                   </div>
-                );
-              })}
+                </div>
+              )})}
             </div>
           </div>
 
@@ -268,8 +248,7 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
                 <div className="flex flex-col gap-4 justify-between">
                   <div className="flex flex-col gap-4">
                     <h3 className={`font-bold text-2xl ${textPrimary}`}>
-                      {indieSynthProject.translations?.[language]?.title ||
-                        indieSynthProject.title}
+                      {indieSynthProject.translations?.[language]?.title || indieSynthProject.title}
                     </h3>
                     <p
                       className={`opacity-60 text-sm leading-relaxed ${textPrimary}`}
@@ -277,16 +256,15 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
                       {text.indieSynthDesc2}
                     </p>
                   </div>
-                  {indieSynthProject.gallery &&
-                    indieSynthProject.gallery.length > 1 && (
-                      <div className="w-full mt-auto flex-1 rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl relative min-h-[200px] hidden md:block">
-                        <ImageWithFallback
-                          src="/images/regenerated_image_1778214429836.webp"
-                          alt="IndieSynth Detail"
-                          className="w-full h-full object-cover absolute inset-0 scale-[1.35] object-center"
-                        />
-                      </div>
-                    )}
+                  {indieSynthProject.gallery && indieSynthProject.gallery.length > 1 && (
+                    <div className="w-full mt-auto flex-1 rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl relative min-h-[200px] hidden md:block">
+                      <ImageWithFallback
+                        src="/src/assets/images/regenerated_image_1778214429836.jpg"
+                        alt="IndieSynth Detail"
+                        className="w-full h-full object-cover absolute inset-0 scale-[1.35] object-center"
+                      />
+                    </div>
+                  )}
                 </div>
                 <div className="flex justify-start w-full h-full">
                   <ParallaxProjectCard

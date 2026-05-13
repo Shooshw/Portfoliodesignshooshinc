@@ -18,10 +18,7 @@ export function Home() {
       <ProjectsMain onProjectClick={setSelectedProject} />
       <ProjectsSecondary onProjectClick={setSelectedProject} />
       <ContactSection />
-      <ProjectModal
-        project={selectedProject}
-        onClose={() => setSelectedProject(null)}
-      />
+      <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
     </>
   );
 }

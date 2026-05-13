@@ -22,12 +22,12 @@ export function CustomCursor() {
 
     const handleOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      const isSelectable =
-        target.closest("button") ||
-        target.closest("a") ||
+      const isSelectable = 
+        target.closest('button') || 
+        target.closest('a') || 
         target.closest('[role="button"]') ||
-        target.closest(".cursor-pointer");
-
+        target.closest('.cursor-pointer');
+      
       setIsHovering(!!isSelectable);
     };
 
@@ -61,10 +61,10 @@ export function CustomCursor() {
         animate={{
           scale: isHovering ? 2 : 1,
           opacity: isClicking ? 0.8 : 0.4,
-          borderWidth: isHovering ? "1px" : "2px",
+          borderWidth: isHovering ? "1px" : "2px"
         }}
       />
-
+      
       {/* Dot */}
       <motion.div
         className={`fixed top-0 left-0 w-1.5 h-1.5 rounded-full bg-[#C8392B]`}
@@ -89,9 +89,9 @@ export function CustomCursor() {
           translateY: "-50%",
         }}
         initial={{ opacity: 0, x: 0 }}
-        animate={{
+        animate={{ 
           opacity: isHovering ? 1 : 0,
-          x: isHovering ? 24 : 0,
+          x: isHovering ? 24 : 0
         }}
       >
         View
