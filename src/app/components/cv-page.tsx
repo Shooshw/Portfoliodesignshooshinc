@@ -16,7 +16,7 @@ import { Badge } from "./ui/badge";
 import { useLanguage } from "../contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
 import { useState } from "react";
-const cvPDF = "/imports/Curriculo_design_PTBR2026-1.pdf";
+const cvPDF = "/images/Curriculo_design_PTBR2026-1.pdf";
 
 interface SkillWithTooltip {
   key: string;

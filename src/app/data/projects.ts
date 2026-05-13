@@ -136,12 +136,12 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign", "Lightroom"],
     files: [],
     color: "from-orange-700 to-red-600",
-    image: "/imports/24kmagic_images/bruno_mars_album_cover.jpg",
+    image: "/images/24kmagic_images/bruno_mars_album_cover.jpg",
     gallery: [
-      "/imports/24kmagic_images/bruno_mars_album_cover.jpg",
-      "/imports/24kmagic_images/free_vinyl_mockup_2.jpg",
-      "/imports/24kmagic_images/vinil_1_bruno_mars.jpg",
-      "/imports/24kmagic_images/vinil_2_bruno_mars.jpg",
+      "/images/24kmagic_images/bruno_mars_album_cover.jpg",
+      "/images/24kmagic_images/free_vinyl_mockup_2.jpg",
+      "/images/24kmagic_images/vinil_1_bruno_mars.jpg",
+      "/images/24kmagic_images/vinil_2_bruno_mars.jpg",
     ],
     translations: {
       en: {
