@@ -230,7 +230,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
 
             <img
               loading="lazy"
-              src="/images/regenerated_image_1778466713759.webp"
+              src="/images/regenerated_image_1778466713759.png"
               alt="Aquora Logo"
               className="relative z-10 w-48 h-48 object-contain drop-shadow-xl p-2"
             />
@@ -323,7 +323,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-blue-500/10" />
               <img
                 loading="lazy"
-                src="/images/regenerated_image_1778466713759.webp"
+                src="/images/regenerated_image_1778466713759.png"
                 alt="Aquora Logo"
                 className="relative z-10 w-full h-full object-contain p-12 drop-shadow-2xl"
               />
@@ -658,7 +658,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
               <div className="group relative w-full aspect-[9/16] bg-gradient-to-b from-gray-100 to-gray-200/50 rounded-[1.5rem] border border-white mx-auto shadow-md overflow-hidden flex items-center justify-center p-4">
                 <img
                   loading="lazy"
-                  src="/images/regenerated_image_1778442010151.webp"
+                  src="/images/regenerated_image_1778442010151.png"
                   alt={tLoc.homeLogin}
                   className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105"
                 />
@@ -673,7 +673,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
               <div className="group relative w-full aspect-[9/16] bg-gradient-to-b from-gray-100 to-gray-200/50 rounded-[1.5rem] border border-white mx-auto shadow-md overflow-hidden flex items-center justify-center p-4">
                 <img
                   loading="lazy"
-                  src="/images/regenerated_image_1778442012973.webp"
+                  src="/images/regenerated_image_1778442012973.png"
                   alt={tLoc.sleepConfig}
                   className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105"
                 />
@@ -688,7 +688,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
               <div className="group relative w-full aspect-[9/16] bg-gradient-to-b from-gray-100 to-gray-200/50 rounded-[1.5rem] border border-white mx-auto shadow-md overflow-hidden flex items-center justify-center p-4">
                 <img
                   loading="lazy"
-                  src="/images/regenerated_image_1778442015485.webp"
+                  src="/images/regenerated_image_1778442015485.png"
                   alt={tLoc.routineMon}
                   className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105"
                 />
@@ -703,7 +703,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
               <div className="group relative w-full aspect-[9/16] bg-gradient-to-b from-gray-100 to-gray-200/50 rounded-[1.5rem] border border-white mx-auto shadow-md overflow-hidden flex items-center justify-center p-4">
                 <img
                   loading="lazy"
-                  src="/images/regenerated_image_1778442017180.webp"
+                  src="/images/regenerated_image_1778442017180.png"
                   alt={tLoc.emergency}
                   className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105"
                 />
@@ -719,7 +719,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             <div className="group relative w-full h-auto bg-gradient-to-b from-gray-100 to-gray-200/50 backdrop-blur-xl border border-white/60 rounded-[3rem] shadow-sm overflow-hidden flex items-center justify-center">
               <img
                 loading="lazy"
-                src="/images/design-system.webp"
+                src="/images/design-system.png"
                 alt={tLoc.dsAlt}
                 className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -739,7 +739,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             <div className="group overflow-hidden rounded-3xl relative h-[400px] shadow-sm hover:shadow-xl transition-all duration-500">
               <img
                 loading="lazy"
-                src="/images/Captura de tela 2026-05-11 001637.webp"
+                src="/images/Captura_de_tela_2026-05-11_001637.png"
                 alt={tLoc.variousApps}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
@@ -753,7 +753,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             <div className="group overflow-hidden rounded-3xl relative h-[400px] shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
               <img
                 loading="lazy"
-                src="/images/Captura de tela 2026-05-11 002534.webp"
+                src="/images/Captura_de_tela_2026-05-11_002534.png"
                 alt={tLoc.supportMat}
                 className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105"
               />
@@ -767,7 +767,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             <div className="md:col-span-2 group overflow-hidden rounded-3xl relative h-[500px] shadow-sm hover:shadow-xl transition-all duration-500 border border-white/50">
               <img
                 loading="lazy"
-                src="/images/Captura de tela 2026-05-11 001645.webp"
+                src="/images/Captura_de_tela_2026-05-11_001645.png"
                 alt={tLoc.officeRec}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />

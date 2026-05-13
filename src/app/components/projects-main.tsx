@@ -93,7 +93,7 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
                     <>
                       <img
                         loading="lazy"
-                        src="/images/regenerated_image_1778465979958.webp"
+                        src="/images/regenerated_image_1778465979958.png"
                         alt="Aquora"
                         className="absolute inset-0 w-full h-full object-contain p-8 bg-gradient-to-tr from-[#fdfbfb] via-[#e2ebf0] to-[#fdfbfb] transition-transform duration-700 z-10 group-hover:opacity-0"
                       />
@@ -110,7 +110,7 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
                     <>
                       <img
                         loading="lazy"
-                        src="/images/regenerated_image_1778283536856.webp"
+                        src="/images/regenerated_image_1778283536856.png"
                         alt="LoL"
                         className="absolute inset-0 w-full h-full object-cover scale-[1.5] transition-transform duration-700 z-10 group-hover:opacity-0"
                       />

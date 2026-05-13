@@ -243,7 +243,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
             </h1>
             <img
               loading="lazy"
-              src="/images/regenerated_image_1778333772812.webp"
+              src="/images/regenerated_image_1778333772812.png"
               alt="League Logo Placeholder"
               className="w-[85%] md:w-[500px] h-auto object-contain mx-auto -mt-2 drop-shadow-xl"
             />
@@ -385,7 +385,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute top-0 left-0 w-[70%] z-10 transition-all duration-700 group-hover:-translate-y-4 group-hover:-translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778438287182.webp"
+                      src="/images/regenerated_image_1778438287182.jpg"
                       alt="Problematização 1"
                       className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -393,7 +393,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute bottom-0 right-0 w-[75%] z-20 transition-all duration-700 group-hover:translate-y-4 group-hover:translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778438069903.webp"
+                      src="/images/regenerated_image_1778438069903.png"
                       alt="Problematização 2"
                       className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -462,7 +462,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute top-0 right-0 w-[70%] z-10 transition-all duration-700 group-hover:-translate-y-4 group-hover:translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778438863377.webp"
+                      src="/images/regenerated_image_1778438863377.png"
                       alt="Resolução 1"
                       className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -470,7 +470,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute bottom-0 left-0 w-[75%] z-20 transition-all duration-700 group-hover:translate-y-4 group-hover:-translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778439392302.webp"
+                      src="/images/regenerated_image_1778439392302.png"
                       alt="Resolução 2"
                       className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -485,7 +485,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute w-[55%] z-10 -rotate-3 translate-x-2 -translate-y-2 transition-all duration-700 group-hover:-translate-x-[120px] group-hover:-translate-y-[120px] group-hover:-rotate-12 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778440331949.webp"
+                      src="/images/regenerated_image_1778440331949.png"
                       alt="Prototipagem 1"
                       className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -494,7 +494,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute w-[50%] z-20 rotate-2 -translate-x-2 translate-y-2 transition-all duration-700 group-hover:translate-x-[120px] group-hover:-translate-y-[80px] group-hover:rotate-12 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778441031638.webp"
+                      src="/images/regenerated_image_1778441031638.png"
                       alt="Prototipagem 3"
                       className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -503,7 +503,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute w-[50%] z-30 -rotate-1 -translate-x-4 -translate-y-4 transition-all duration-700 group-hover:-translate-x-[100px] group-hover:translate-y-[100px] group-hover:-rotate-6 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778440822469.webp"
+                      src="/images/regenerated_image_1778440822469.png"
                       alt="Prototipagem 4"
                       className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -512,7 +512,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute w-[60%] z-40 rotate-1 translate-x-3 translate-y-3 transition-all duration-700 group-hover:translate-x-[70px] group-hover:translate-y-[110px] group-hover:rotate-6 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778440003813.webp"
+                      src="/images/regenerated_image_1778440003813.png"
                       alt="Prototipagem 2"
                       className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700 border border-[#0bc6e3]/30"
                     />
@@ -565,7 +565,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute top-0 right-0 w-[70%] z-10 transition-all duration-700 group-hover:-translate-y-4 group-hover:translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778441202811.webp"
+                      src="/images/regenerated_image_1778441202811.png"
                       alt="Finalização 1"
                       className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -573,7 +573,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   <div className="absolute bottom-0 left-0 w-[75%] z-20 transition-all duration-700 group-hover:translate-y-4 group-hover:-translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
                     <img
                       loading="lazy"
-                      src="/images/regenerated_image_1778441201032.webp"
+                      src="/images/regenerated_image_1778441201032.png"
                       alt="Finalização 2"
                       className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700"
                     />
@@ -773,7 +773,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                 </div>
                 <img
                   loading="lazy"
-                  src="/images/lol_screen_1.webp"
+                  src="/images/lol_screen_1.png"
                   alt="Home"
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                 />
@@ -791,7 +791,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                 </div>
                 <img
                   loading="lazy"
-                  src="/images/lol_screen_2 .webp"
+                  src="/images/lol_screen_2_.png"
                   alt="Loja do Cliente"
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                 />
@@ -826,7 +826,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                   </div>
                   <img
                     loading="lazy"
-                    src="/images/lol_screen_3.webp"
+                    src="/images/lol_screen_3.png"
                     alt="Seleção de Modos"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                   />
@@ -845,7 +845,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                 </div>
                 <img
                   loading="lazy"
-                  src="/images/lol_screen_4.webp"
+                  src="/images/lol_screen_4.png"
                   alt="Perfil e Loja"
                   className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100"
                 />

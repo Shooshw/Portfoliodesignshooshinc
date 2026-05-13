@@ -281,7 +281,7 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
                     indieSynthProject.gallery.length > 1 && (
                       <div className="w-full mt-auto flex-1 rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl relative min-h-[200px] hidden md:block">
                         <ImageWithFallback
-                          src="/images/regenerated_image_1778214429836.webp"
+                          src="/images/regenerated_image_1778214429836.jpg"
                           alt="IndieSynth Detail"
                           className="w-full h-full object-cover absolute inset-0 scale-[1.35] object-center"
                         />
