@@ -4,8 +4,16 @@ import { useTheme } from "../contexts/theme-context";
 import { Award, Target, Star } from "lucide-react";
 
 const technicalSkills = [
-  "Adobe Suite", "Office Suite", "3D Modeling", "Figma",
-  "Inkscape", "Gimp", "Krita", "Affinity", "ClipChamp", "DaVinci Resolve",
+  "Adobe Suite",
+  "Office Suite",
+  "3D Modeling",
+  "Figma",
+  "Inkscape",
+  "Gimp",
+  "Krita",
+  "Affinity",
+  "ClipChamp",
+  "DaVinci Resolve",
 ];
 
 const softSkills = [
@@ -33,13 +41,17 @@ export function AboutIntro() {
   ];
 
   return (
-    <section id="about-intro" className={`py-32 relative overflow-hidden transition-colors duration-700 ${bg}`}>
+    <section
+      id="about-intro"
+      className={`py-32 relative overflow-hidden transition-colors duration-700 ${bg}`}
+    >
       {/* Decorative vertical line */}
-      <div className={`absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-current opacity-10 ${textPrimary}`} />
+      <div
+        className={`absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent to-current opacity-10 ${textPrimary}`}
+      />
 
       <div className="max-w-6xl mx-auto px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
-
           {/* Left Column: Heading & Status */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -47,14 +59,20 @@ export function AboutIntro() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <p className={`font-sans text-[0.65rem] font-bold tracking-[0.4em] uppercase mb-6 ${textMuted}`}>
+            <p
+              className={`font-sans text-[0.65rem] font-bold tracking-[0.4em] uppercase mb-6 ${textMuted}`}
+            >
               ✦ Profile Analysis ✦
             </p>
-            <h2 className={`font-display font-semibold italic text-[clamp(2.8rem,6vw,4.5rem)] tracking-tighter leading-[0.9] mb-8 ${textPrimary}`}>
+            <h2
+              className={`font-display font-semibold italic text-[clamp(2.8rem,6vw,4.5rem)] tracking-tighter leading-[0.9] mb-8 ${textPrimary}`}
+            >
               {t("about.title")}
             </h2>
             <div className="space-y-4">
-              <p className={`font-sans text-xl font-light leading-relaxed ${textSecondary}`}>
+              <p
+                className={`font-sans text-xl font-light leading-relaxed ${textSecondary}`}
+              >
                 {t("about.subtitle")}
               </p>
               <div className={`h-px w-20 bg-[#C8392B]`} />
@@ -63,10 +81,21 @@ export function AboutIntro() {
             {/* Stats Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-16">
               {stats.map((stat, i) => (
-                <div key={i} className={`p-8 rounded-[2rem] border transition-transform hover:-translate-y-1 ${surface} ${border}`}>
+                <div
+                  key={i}
+                  className={`p-8 rounded-[2rem] border transition-transform hover:-translate-y-1 ${surface} ${border}`}
+                >
                   <stat.icon size={20} className="text-[#C8392B] mb-6" />
-                  <p className={`font-display font-bold italic text-3xl mb-1 ${textPrimary}`}>{stat.value}</p>
-                  <p className={`font-sans text-[0.6rem] font-bold tracking-widest uppercase ${textMuted}`}>{stat.label}</p>
+                  <p
+                    className={`font-display font-bold italic text-3xl mb-1 ${textPrimary}`}
+                  >
+                    {stat.value}
+                  </p>
+                  <p
+                    className={`font-sans text-[0.6rem] font-bold tracking-widest uppercase ${textMuted}`}
+                  >
+                    {stat.label}
+                  </p>
                 </div>
               ))}
             </div>
@@ -80,11 +109,15 @@ export function AboutIntro() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="lg:pt-28"
           >
-            <div className={`p-10 rounded-[2.5rem] border relative overflow-hidden mb-12 ${surface} ${border}`}>
+            <div
+              className={`p-10 rounded-[2.5rem] border relative overflow-hidden mb-12 ${surface} ${border}`}
+            >
               <div className="absolute top-0 right-0 p-6 opacity-5 pointer-events-none">
                 <Target size={120} />
               </div>
-              <p className={`font-sans text-base md:text-lg leading-relaxed font-light ${textSecondary}`}>
+              <p
+                className={`font-sans text-base md:text-lg leading-relaxed font-light ${textSecondary}`}
+              >
                 {t("about.description")}
               </p>
             </div>
@@ -93,7 +126,9 @@ export function AboutIntro() {
             <div className="space-y-10">
               {/* Technical */}
               <div>
-                <h3 className={`font-sans text-[0.65rem] font-bold tracking-[0.3em] uppercase mb-6 flex items-center gap-3 ${textMuted}`}>
+                <h3
+                  className={`font-sans text-[0.65rem] font-bold tracking-[0.3em] uppercase mb-6 flex items-center gap-3 ${textMuted}`}
+                >
                   <span className="w-8 h-px bg-current opacity-20" />
                   {t("about.technicalSkills")}
                 </h3>
@@ -111,7 +146,9 @@ export function AboutIntro() {
 
               {/* Soft Skills */}
               <div>
-                <h3 className={`font-sans text-[0.65rem] font-bold tracking-[0.3em] uppercase mb-6 flex items-center gap-3 ${textMuted}`}>
+                <h3
+                  className={`font-sans text-[0.65rem] font-bold tracking-[0.3em] uppercase mb-6 flex items-center gap-3 ${textMuted}`}
+                >
                   <span className="w-8 h-px bg-current opacity-20" />
                   {t("about.softSkills")}
                 </h3>
@@ -128,7 +165,6 @@ export function AboutIntro() {
               </div>
             </div>
           </motion.div>
-
         </div>
       </div>
     </section>

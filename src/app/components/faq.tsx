@@ -33,7 +33,6 @@ export function FAQ() {
   return (
     <div className={`py-32 relative transition-colors duration-700 ${bg}`}>
       <div className="max-w-4xl mx-auto px-6">
-        
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -44,10 +43,14 @@ export function FAQ() {
           <div className="flex items-center justify-center gap-3 mb-8">
             <HelpCircle size={32} className="text-[#C8392B]" />
           </div>
-          <h2 className={`font-display font-semibold italic text-[clamp(2.8rem,6vw,4.5rem)] tracking-tighter leading-[0.9] mb-8 ${textPrimary}`}>
+          <h2
+            className={`font-display font-semibold italic text-[clamp(2.8rem,6vw,4.5rem)] tracking-tighter leading-[0.9] mb-8 ${textPrimary}`}
+          >
             {t("faq.title")}
           </h2>
-          <p className={`font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed ${textMuted}`}>
+          <p
+            className={`font-sans text-base md:text-lg max-w-xl mx-auto leading-relaxed ${textMuted}`}
+          >
             {t("faq.subtitle")}
           </p>
         </motion.div>
@@ -61,20 +64,24 @@ export function FAQ() {
         >
           <Accordion type="single" collapsible className="w-full space-y-4">
             {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`} 
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
                 className={`border rounded-[2rem] overflow-hidden px-8 transition-colors ${surface} ${border}`}
               >
-                <AccordionTrigger className={`font-display text-xl py-7 hover:no-underline text-left group transition-colors ${textPrimary} hover:text-[#C8392B]`}>
+                <AccordionTrigger
+                  className={`font-display text-xl py-7 hover:no-underline text-left group transition-colors ${textPrimary} hover:text-[#C8392B]`}
+                >
                   <div className="flex items-center gap-4">
                     <span className="font-sans text-[0.65rem] font-bold opacity-20 group-hover:opacity-100 transition-opacity">
-                      {(index + 1).toString().padStart(2, '0')}
+                      {(index + 1).toString().padStart(2, "0")}
                     </span>
                     {faq.question}
                   </div>
                 </AccordionTrigger>
-                <AccordionContent className={`font-sans text-base leading-relaxed pb-8 opacity-60 pl-10 whitespace-pre-line ${textPrimary}`}>
+                <AccordionContent
+                  className={`font-sans text-base leading-relaxed pb-8 opacity-60 pl-10 whitespace-pre-line ${textPrimary}`}
+                >
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -91,12 +98,16 @@ export function FAQ() {
           className={`relative p-12 md:p-20 rounded-[3rem] text-center overflow-hidden border ${isDark ? "bg-[#111111]/50 border-white/5" : "bg-white border-black/5 shadow-sm"}`}
         >
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none" />
-          
+
           <div className="relative z-10">
-            <h3 className={`font-display font-semibold italic text-3xl mb-4 ${textPrimary}`}>
+            <h3
+              className={`font-display font-semibold italic text-3xl mb-4 ${textPrimary}`}
+            >
               {t("faq.stillQuestions")}
             </h3>
-            <p className={`font-sans text-sm md:text-base mb-12 max-w-md mx-auto opacity-60 ${textPrimary}`}>
+            <p
+              className={`font-sans text-sm md:text-base mb-12 max-w-md mx-auto opacity-60 ${textPrimary}`}
+            >
               {t("faq.stillQuestionsDesc")}
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -118,7 +129,6 @@ export function FAQ() {
             </div>
           </div>
         </motion.div>
-
       </div>
     </div>
   );

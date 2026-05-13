@@ -54,17 +54,20 @@ export const projects: Project[] = [
         title: "Aquora",
         category: "Design de App / UI/UX",
         role: "Designer UI/UX",
-        description: "Aplicativo de Bem-Estar focado em equilíbrio e saúde mental.",
-        longDescription: "O Aquora foi desenvolvido como um projeto de conclusão de curso (TCC), recebendo nota máxima e aprovação unânime da banca. O foco do projeto foi criar uma interface calmante e funcional que auxiliasse usuários na gestão do estresse e promoção do bem-estar diário. Realizei todo o processo de design: desde a pesquisa de usuários e wireframing até a prototipação de alta fidelidade e criação da identidade visual da marca.",
+        description:
+          "Aplicativo de Bem-Estar focado em equilíbrio e saúde mental.",
+        longDescription:
+          "O Aquora foi desenvolvido como um projeto de conclusão de curso (TCC), recebendo nota máxima e aprovação unânime da banca. O foco do projeto foi criar uma interface calmante e funcional que auxiliasse usuários na gestão do estresse e promoção do bem-estar diário. Realizei todo o processo de design: desde a pesquisa de usuários e wireframing até a prototipação de alta fidelidade e criação da identidade visual da marca.",
       },
       en: {
         title: "Aquora",
         category: "App Design / UI/UX",
         role: "UI/UX Designer",
         description: "Wellness App focused on balance and mental health.",
-        longDescription: "Aquora was developed as a final graduation project (TCC), receiving top grades and unanimous approval from the board. The project's focus was to create a calming and functional interface that helps users manage stress and promote daily wellness. I carried out the entire design process: from user research and wireframing to high-fidelity prototyping and visual brand identity creation.",
-      }
-    }
+        longDescription:
+          "Aquora was developed as a final graduation project (TCC), receiving top grades and unanimous approval from the board. The project's focus was to create a calming and functional interface that helps users manage stress and promote daily wellness. I carried out the entire design process: from user research and wireframing to high-fidelity prototyping and visual brand identity creation.",
+      },
+    },
   },
   {
     id: 2,
@@ -73,7 +76,8 @@ export const projects: Project[] = [
     category: "Redesign UI/UX",
     year: "2024",
     role: "Designer Digital",
-    description: "Redesign conceitual da interface do cliente de League of Legends.",
+    description:
+      "Redesign conceitual da interface do cliente de League of Legends.",
     longDescription:
       "Este projeto explorou novas possibilidades visuais e funcionais para o cliente de League of Legends. O objetivo foi melhorar a clareza da navegação, unificar a linguagem visual entre as diferentes abas e modernizar a experiência do jogador sem perder a essência épica do jogo. Foquei especialmente na reformulação da página de perfil e na lista de amigos.",
     tools: ["Figma", "Adobe Photoshop", "Adobe Illustrator", "LoL Database"],
@@ -87,17 +91,21 @@ export const projects: Project[] = [
         title: "League of Legends",
         category: "Redesign UI/UX",
         role: "Designer Digital",
-        description: "Redesign conceitual da interface do cliente de League of Legends.",
-        longDescription: "Este projeto explorou novas possibilidades visuais e funcionais para o cliente de League of Legends. O objetivo foi melhorar a clareza da navegação, unificar a linguagem visual entre as diferentes abas e modernizar a experiência do jogador sem perder a essência épica do jogo. Foquei especialmente na reformulação da página de perfil e na lista de amigos.",
+        description:
+          "Redesign conceitual da interface do cliente de League of Legends.",
+        longDescription:
+          "Este projeto explorou novas possibilidades visuais e funcionais para o cliente de League of Legends. O objetivo foi melhorar a clareza da navegação, unificar a linguagem visual entre as diferentes abas e modernizar a experiência do jogador sem perder a essência épica do jogo. Foquei especialmente na reformulação da página de perfil e na lista de amigos.",
       },
       en: {
         title: "League of Legends",
         category: "UI/UX Redesign",
         role: "Digital Designer",
-        description: "Conceptual UI/UX redesign of the League of Legends client interface.",
-        longDescription: "This project explored new visual and functional possibilities for the League of Legends client. The goal was to improve navigation clarity, unify the visual language across different tabs, and modernize the player experience without losing the game's epic essence. I focused especially on revamping the profile page and the friends list.",
-      }
-    }
+        description:
+          "Conceptual UI/UX redesign of the League of Legends client interface.",
+        longDescription:
+          "This project explored new visual and functional possibilities for the League of Legends client. The goal was to improve navigation clarity, unify the visual language across different tabs, and modernize the player experience without losing the game's epic essence. I focused especially on revamping the profile page and the friends list.",
+      },
+    },
   },
   {
     id: 10,
@@ -119,9 +127,10 @@ export const projects: Project[] = [
         category: "Album Cover Design",
         role: "Graphic Designer / Producer",
         description: "Cover design for the album Zanmu",
-        longDescription: "Cover art creation for the song 'Mirror' by singer ADO, from the Zanmu album. The project incorporates cyberpunk design elements with a vibrant neon palette, exploring futuristic and urban themes. The visual composition combines photography, 3D elements, and customized typography to create a striking and contemporary visual identity that reflects the song's essence.",
-      }
-    }
+        longDescription:
+          "Cover art creation for the song 'Mirror' by singer ADO, from the Zanmu album. The project incorporates cyberpunk design elements with a vibrant neon palette, exploring futuristic and urban themes. The visual composition combines photography, 3D elements, and customized typography to create a striking and contemporary visual identity that reflects the song's essence.",
+      },
+    },
   },
   {
     id: 11,
@@ -136,12 +145,13 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign", "Lightroom"],
     files: [],
     color: "from-orange-700 to-red-600",
-    image: "/src/imports/24kmagic images/Bruno-mars-album cover, finesse para web.jpg",
+    image:
+      "/imports/24kmagic images/Bruno-mars-album cover, finesse para web.jpg",
     gallery: [
-      "/src/imports/24kmagic images/Bruno-mars-album cover, finesse para web.jpg",
-      "/src/imports/24kmagic images/Free_Vinyl_Mockup_2.jpg",
-      "/src/imports/24kmagic images/VInil-1-bruno-mars.jpg",
-      "/src/imports/24kmagic images/VInil-2-bruno-mars.jpg",
+      "/imports/24kmagic images/Bruno-mars-album cover, finesse para web.jpg",
+      "/imports/24kmagic images/Free_Vinyl_Mockup_2.jpg",
+      "/imports/24kmagic images/VInil-1-bruno-mars.jpg",
+      "/imports/24kmagic images/VInil-2-bruno-mars.jpg",
     ],
     translations: {
       en: {
@@ -149,9 +159,10 @@ export const projects: Project[] = [
         category: "Album Cover Design",
         role: "Graphic Designer",
         description: "Fan cover for the song 24k Magic",
-        longDescription: "Creation of a fan cover for Bruno Mars' song '24k Magic'. The project incorporates vintage 80s elements, combining photography, graphic design, and retro typography to create a visual tribute that captures the energy and style of the song. The aesthetics were inspired by the golden era of funk and R&B, featuring a warm color palette and a nostalgic finish.",
-      }
-    }
+        longDescription:
+          "Creation of a fan cover for Bruno Mars' song '24k Magic'. The project incorporates vintage 80s elements, combining photography, graphic design, and retro typography to create a visual tribute that captures the energy and style of the song. The aesthetics were inspired by the golden era of funk and R&B, featuring a warm color palette and a nostalgic finish.",
+      },
+    },
   },
   {
     id: 12,
@@ -160,8 +171,10 @@ export const projects: Project[] = [
     category: "Music Jam Project / Poster Design",
     year: "2024",
     role: "Designer Gráfico",
-    description: "Poster experimental inspirado no álbum 'Travelling without moving'.",
-    longDescription: "Poster experimental inspirado no álbum 'Travelling without moving', explorando estética glitch e tipografia dinâmica.",
+    description:
+      "Poster experimental inspirado no álbum 'Travelling without moving'.",
+    longDescription:
+      "Poster experimental inspirado no álbum 'Travelling without moving', explorando estética glitch e tipografia dinâmica.",
     tools: ["Adobe Photoshop", "Adobe Illustrator"],
     files: [],
     color: "from-blue-700 to-cyan-600",
@@ -176,10 +189,12 @@ export const projects: Project[] = [
         title: "Virtual Insanity - Jamiroquai",
         category: "Music Jam Project / Poster Design",
         role: "Graphic Designer",
-        description: "Experimental poster inspired by the 'Travelling without moving' album.",
-        longDescription: "Experimental poster inspired by the 'Travelling without moving' album, exploring glitch aesthetics and dynamic typography.",
-      }
-    }
+        description:
+          "Experimental poster inspired by the 'Travelling without moving' album.",
+        longDescription:
+          "Experimental poster inspired by the 'Travelling without moving' album, exploring glitch aesthetics and dynamic typography.",
+      },
+    },
   },
   {
     id: 13,
@@ -189,7 +204,8 @@ export const projects: Project[] = [
     year: "2024",
     role: "Designer Gráfico",
     description: "Produção de uma marca sobre jogos.",
-    longDescription: "Produção de uma marca sobre jogos. Uma edição especial nostálgica aos antigos consoles portáteis. Feito um conteúdo exclusivo com poster especial na temática CyberCity. O projeto segue métricas rigorosas de diagramação editorial para revista impressa, em formato padrão de 20,5 x 27,5 cm (fechado) com lombada quadrada, sangria de 5mm, utilizando grids modulares e baseline para garantir harmonia e legibilidade nas páginas multiplas.",
+    longDescription:
+      "Produção de uma marca sobre jogos. Uma edição especial nostálgica aos antigos consoles portáteis. Feito um conteúdo exclusivo com poster especial na temática CyberCity. O projeto segue métricas rigorosas de diagramação editorial para revista impressa, em formato padrão de 20,5 x 27,5 cm (fechado) com lombada quadrada, sangria de 5mm, utilizando grids modulares e baseline para garantir harmonia e legibilidade nas páginas multiplas.",
     tools: ["Adobe Photoshop", "Adobe InDesign"],
     files: [],
     color: "from-fuchsia-700 to-rose-600",
@@ -207,9 +223,10 @@ export const projects: Project[] = [
         category: "Branding",
         role: "Graphic Designer",
         description: "Production of a gaming brand.",
-        longDescription: "Production of a gaming brand. A nostalgic special edition dedicated to vintage portable consoles. Features exclusive content with a special CyberCity-themed poster. The project follows rigorous editorial grid metrics for printed magazines, in a standard 20.5 x 27.5 cm (closed) format with a square spine, 5mm bleed, using modular grids and a baseline to ensure harmony and readability across multiple pages.",
-      }
-    }
+        longDescription:
+          "Production of a gaming brand. A nostalgic special edition dedicated to vintage portable consoles. Features exclusive content with a special CyberCity-themed poster. The project follows rigorous editorial grid metrics for printed magazines, in a standard 20.5 x 27.5 cm (closed) format with a square spine, 5mm bleed, using modular grids and a baseline to ensure harmony and readability across multiple pages.",
+      },
+    },
   },
 ];
 
