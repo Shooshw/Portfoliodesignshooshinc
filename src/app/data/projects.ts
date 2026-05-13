@@ -194,13 +194,13 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign"],
     files: [],
     color: "from-fuchsia-700 to-rose-600",
-    image: "/images/regenerated_image_1778211615718.jpg",
+    image: "/images/chapeuzinho-project.jpg",
     gallery: [
-      "/images/regenerated_image_1778211615718.jpg",
-      "/images/regenerated_image_1778212354434.png",
-      "/images/regenerated_image_1778212356032.jpg",
-      "/images/regenerated_image_1778213078006.png",
-      "/images/regenerated_image_1778213157796.jpg",
+      "/images/chapeuzinho-project.jpg",
+      "/images/chapeuzinho-project-2.png",
+      "/images/chapeuzinho-project-3.jpg",
+      "/images/chapeuzinho-project-4.png",
+      "/images/chapeuzinho-project-5.jpg",
     ],
     translations: {
       en: {
