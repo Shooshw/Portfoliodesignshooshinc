@@ -112,7 +112,7 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator", "Blender"],
     files: [],
     color: "from-purple-800 to-pink-600",
-    image: "/images/regenerated_image_1778211000396.jpg",
+    image: "/images/mirror-ado-project.jpg",
     translations: {
       en: {
         title: "Mirror - ADO",
@@ -165,11 +165,11 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator"],
     files: [],
     color: "from-blue-700 to-cyan-600",
-    image: "/images/regenerated_image_1778211137770.jpg",
+    image: "/images/zumbis-project.jpg",
     gallery: [
-      "/images/regenerated_image_1778211137770.jpg",
-      "/images/regenerated_image_1778211222262.png",
-      "/images/regenerated_image_1778211232196.png",
+      "/images/zumbis-project.jpg",
+      "/images/zumbis-project-2.png",
+      "/images/zumbis-project-3.png",
     ],
     translations: {
       en: {
@@ -193,13 +193,13 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign"],
     files: [],
     color: "from-fuchsia-700 to-rose-600",
-    image: "/images/regenerated_image_1778211615718.jpg",
+    image: "/images/chapeuzinho-project.jpg",
     gallery: [
-      "/images/regenerated_image_1778211615718.jpg",
-      "/images/regenerated_image_1778212354434.png",
-      "/images/regenerated_image_1778212356032.jpg",
-      "/images/regenerated_image_1778213078006.png",
-      "/images/regenerated_image_1778213157796.jpg",
+      "/images/chapeuzinho-project.jpg",
+      "/images/chapeuzinho-project-2.png",
+      "/images/chapeuzinho-project-3.jpg",
+      "/images/chapeuzinho-project-4.png",
+      "/images/chapeuzinho-project-5.jpg",
     ],
     translations: {
       en: {

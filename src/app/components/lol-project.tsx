@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { Project } from "../data/projects";
 import { useLanguage } from "../contexts/language-context";
 
-import chogathVideo from "../../assets/images/cho'gath_cavalheiro.mp4";
+import chogathVideo from "../../assets/images/chogath-cavalheiro.mp4";
 
 interface LolProjectProps {
   project: Project;
@@ -162,7 +162,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
         {/* Hero Section */}
         <section className="relative w-full h-[100vh] flex flex-col items-center justify-end bg-black">
           <div className="absolute inset-0 overflow-hidden">
-             <video src="/images/1668457441-1668457441-neeko-the-curious-chameleon-live-wallpaper.mp4" autoPlay loop playsInline muted className="w-full h-full object-cover opacity-80" />
+             <video src="/images/neeko-live-wallpaper.mp4" autoPlay loop playsInline muted className="w-full h-full object-cover opacity-80" />
              <div className="absolute inset-0 bg-gradient-to-t from-[#010a13] via-[#010a13]/40 to-transparent" />
           </div>
           
@@ -170,7 +170,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
             <h1 className="font-beaufort text-4xl md:text-6xl font-bold uppercase tracking-widest text-[#c69b3f] drop-shadow-[0_4px_10px_rgba(0,0,0,0.8)]">
               Redesign Client
             </h1>
-            <img src="/images/regenerated_image_1778333772812.png" alt="League Logo Placeholder" loading="lazy" decoding="async" className="w-[85%] md:w-[500px] h-auto object-contain mx-auto -mt-2 drop-shadow-xl" />
+            <img src="/images/lol-logo.png" alt="League Logo Placeholder" loading="lazy" decoding="async" className="w-[85%] md:w-[500px] h-auto object-contain mx-auto -mt-2 drop-shadow-xl" />
             <p className="mt-2 text-lg max-w-2xl mx-auto text-[#f0e6d2] font-light shadow-black drop-shadow-md">
               {text.heroDesc}
             </p>
@@ -252,7 +252,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#005a82]/10 via-[#010a13]/80 to-[#010a13] pointer-events-none" />
           
           <div className="absolute top-8 right-8 sm:top-16 sm:right-16 opacity-100 pointer-events-none w-48 h-48 sm:w-64 sm:h-64 mask-radial-fade">
-             <video src="/images/blitzcrank_goleiro.mp4" autoPlay loop playsInline muted className="w-full h-full object-cover rounded-full shadow-2xl" />
+             <video src="/images/blitzcrank-goleiro.mp4" autoPlay loop playsInline muted className="w-full h-full object-cover rounded-full shadow-2xl" />
           </div>
 
           <div className="max-w-6xl mx-auto px-6 relative z-10">
@@ -263,10 +263,10 @@ export function LolProject({ project, onClose }: LolProjectProps) {
               <div className="flex flex-col md:flex-row items-center gap-12 group">
                 <div className="w-full md:w-1/2 order-2 md:order-1 relative h-[300px] md:h-[420px]">
                   <div className="absolute top-0 left-0 w-[70%] z-10 transition-all duration-700 group-hover:-translate-y-4 group-hover:-translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778438287182.jpg" alt="Problematização 1" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-prob-1.jpg" alt="Problematização 1" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                   <div className="absolute bottom-0 right-0 w-[75%] z-20 transition-all duration-700 group-hover:translate-y-4 group-hover:translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778438069903.png" alt="Problematização 2" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-prob-2.png" alt="Problematização 2" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 order-1 md:order-2">
@@ -298,10 +298,10 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                 </div>
                 <div className="w-full md:w-1/2 order-2 relative h-[300px] md:h-[420px]">
                   <div className="absolute top-0 right-0 w-[70%] z-10 transition-all duration-700 group-hover:-translate-y-4 group-hover:translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778438863377.png" alt="Resolução 1" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-res-1.png" alt="Resolução 1" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                   <div className="absolute bottom-0 left-0 w-[75%] z-20 transition-all duration-700 group-hover:translate-y-4 group-hover:-translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778439392302.png" alt="Resolução 2" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-res-2.png" alt="Resolução 2" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                 </div>
               </div>
@@ -311,19 +311,19 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                 <div className="w-full md:w-1/2 order-2 md:order-1 relative h-[300px] md:h-[420px] flex items-center justify-center">
                   {/* Stack Image 1 */}
                   <div className="absolute w-[55%] z-10 -rotate-3 translate-x-2 -translate-y-2 transition-all duration-700 group-hover:-translate-x-[120px] group-hover:-translate-y-[120px] group-hover:-rotate-12 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778440331949.png" alt="Prototipagem 1" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-proto-1.png" alt="Prototipagem 1" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                   {/* Stack Image 3 */}
                   <div className="absolute w-[50%] z-20 rotate-2 -translate-x-2 translate-y-2 transition-all duration-700 group-hover:translate-x-[120px] group-hover:-translate-y-[80px] group-hover:rotate-12 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778441031638.png" alt="Prototipagem 3" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-proto-3.png" alt="Prototipagem 3" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                   {/* Stack Image 4 */}
                   <div className="absolute w-[50%] z-30 -rotate-1 -translate-x-4 -translate-y-4 transition-all duration-700 group-hover:-translate-x-[100px] group-hover:translate-y-[100px] group-hover:-rotate-6 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778440822469.png" alt="Prototipagem 4" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-proto-4.png" alt="Prototipagem 4" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-80 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                   {/* Stack Image 2 (Top) */}
                   <div className="absolute w-[60%] z-40 rotate-1 translate-x-3 translate-y-3 transition-all duration-700 group-hover:translate-x-[70px] group-hover:translate-y-[110px] group-hover:rotate-6 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778440003813.png" alt="Prototipagem 2" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700 border border-[#0bc6e3]/30" />
+                    <img src="/images/lol-proto-2.png" alt="Prototipagem 2" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700 border border-[#0bc6e3]/30" />
                   </div>
                 </div>
                 <div className="w-full md:w-1/2 order-1 md:order-2">
@@ -356,10 +356,10 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                 </div>
                 <div className="w-full md:w-1/2 order-2 relative h-[300px] md:h-[420px]">
                   <div className="absolute top-0 right-0 w-[70%] z-10 transition-all duration-700 group-hover:-translate-y-4 group-hover:translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778441202811.png" alt="Finalização 1" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-final-1.png" alt="Finalização 1" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                   <div className="absolute bottom-0 left-0 w-[75%] z-20 transition-all duration-700 group-hover:translate-y-4 group-hover:-translate-x-2 group-hover:scale-105 drop-shadow-[0_15px_25px_rgba(0,0,0,0.9)]">
-                    <img src="/images/regenerated_image_1778441201032.png" alt="Finalização 2" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
+                    <img src="/images/lol-final-2.png" alt="Finalização 2" loading="lazy" decoding="async" className="w-full h-auto rounded-sm opacity-90 group-hover:opacity-100 transition-opacity duration-700" />
                   </div>
                 </div>
               </div>
@@ -373,7 +373,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
           {/* Cho'Gath Floating on Right Edge of Briefing */}
           <div className="absolute right-0 sm:-right-24 top-0 sm:top-10 flex z-30 pointer-events-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
             <div className="w-[160px] h-[160px] sm:w-[260px] sm:h-[260px] mask-radial-fade mix-blend-screen drop-shadow-2xl">
-              <video src="/images/cho'gath_cavalheiro.mp4" autoPlay loop playsInline muted className="w-full h-full object-cover opacity-100 rounded-full" title="Cho'Gath Gentleman" />
+              <video src="/images/chogath-cavalheiro.mp4" autoPlay loop playsInline muted className="w-full h-full object-cover opacity-100 rounded-full" title="Cho'Gath Gentleman" />
             </div>
           </div>
 
@@ -463,7 +463,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                    <h3 className="font-beaufort text-2xl text-[#f0e6d2]">{text.screen1Title}</h3>
                    <p className="font-spiegel text-sm text-[#0bc6e3]">{text.screen1Desc}</p>
                  </div>
-                 <img src="/images/lol_screen_1.png" alt="Home" loading="lazy" decoding="async" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                 <img src="/images/lol-screen-1.png" alt="Home" loading="lazy" decoding="async" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
                </div>
 
                {/* Tela 2 */}
@@ -480,7 +480,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                  {/* Zed Galante Floating on Left Edge */}
                  <div className="absolute -left-20 sm:-left-48 top-[75%] sm:top-[85%] -translate-y-1/2 flex z-30 pointer-events-none drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">
                    <div className="w-[140px] h-[140px] sm:w-[220px] sm:h-[220px] mask-radial-fade mix-blend-screen drop-shadow-2xl">
-                      <video src="/images/zed_galante.mp4" autoPlay loop playsInline muted className="w-full h-full object-cover opacity-100 rounded-full" title="Zed Galante" />
+                      <video src="/images/zed-galante.mp4" autoPlay loop playsInline muted className="w-full h-full object-cover opacity-100 rounded-full" title="Zed Galante" />
                    </div>
                  </div>
 
@@ -489,7 +489,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                      <h3 className="font-beaufort text-2xl text-[#f0e6d2]">{text.screen2Title}</h3>
                      <p className="font-spiegel text-sm text-[#0bc6e3]">{text.screen2Desc}</p>
                    </div>
-                   <img src="/images/lol_screen_3.png" alt="Seleção de Modos" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                   <img src="/images/lol-screen-3.png" alt="Seleção de Modos" loading="lazy" decoding="async" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
                  </div>
                </div>
 
@@ -499,7 +499,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
                    <h3 className="font-beaufort text-2xl text-[#f0e6d2]">{text.screen4Title}</h3>
                    <p className="font-spiegel text-sm text-[#0bc6e3]">{text.screen4Desc}</p>
                  </div>
-                 <img src="/images/lol_screen_4.png" alt="Perfil e Loja" loading="lazy" decoding="async" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
+                 <img src="/images/lol-screen-4.png" alt="Perfil e Loja" loading="lazy" decoding="async" className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700 opacity-80 group-hover:opacity-100" />
                </div>
             </div>
           </div>
