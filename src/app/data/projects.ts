@@ -112,7 +112,7 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator", "Blender"],
     files: [],
     color: "from-purple-800 to-pink-600",
-    image: "/images/Poster-ADO-MIRRORweb.jpg",
+    image: "/images/mirror-ado-project.jpg",
     translations: {
       en: {
         title: "Mirror - ADO",

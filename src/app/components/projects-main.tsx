@@ -82,7 +82,7 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
               <div className="relative h-[420px] overflow-hidden bg-[#0D0D0D]">
                 {isAquora ? (
                    <>
-                     <img src="/images/aquora-logo.png" alt="Aquora" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain p-8 bg-gradient-to-tr from-[#fdfbfb] via-[#e2ebf0] to-[#fdfbfb] transition-transform duration-700 z-10 group-hover:opacity-0" />
+                     <ImageWithFallback src="/images/aquora-logo.png" alt="Aquora" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain p-8 bg-gradient-to-tr from-[#fdfbfb] via-[#e2ebf0] to-[#fdfbfb] transition-transform duration-700 z-10 group-hover:opacity-0" />
                      <video src="/images/aquora-video.mp4" loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.10] group-hover:scale-[1.13] transition-transform duration-700 z-0" />
                    </>
                 ) : isLol ? (
