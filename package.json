@@ -69,8 +69,7 @@
     "@vitejs/plugin-react": "4.7.0",
     "svgo": "^4.0.1",
     "tailwindcss": "4.1.12",
-    "vite": "6.3.5",
-    "vite-plugin-image-optimizer": "^2.0.3"
+    "vite": "6.3.5"
   },
   "peerDependencies": {
     "react": "18.3.1",
