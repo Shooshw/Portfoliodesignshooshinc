@@ -120,7 +120,7 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator", "Blender"],
     files: [],
     color: "from-purple-800 to-pink-600",
-    image: "/images/regenerated_image_1778211000396.jpg",
+    image: "/images/regenerated_image_1778211000396.webp",
     translations: {
       en: {
         title: "Mirror - ADO",
@@ -146,12 +146,12 @@ export const projects: Project[] = [
     files: [],
     color: "from-orange-700 to-red-600",
     image:
-      "/imports/24kmagic_images/Bruno-mars-album_cover_finesse_para_web.jpg",
+      "/imports/24kmagic_images/Bruno-mars-album_cover_finesse_para_web.webp",
     gallery: [
-      "/imports/24kmagic_images/Bruno-mars-album_cover_finesse_para_web.jpg",
-      "/imports/24kmagic_images/Free_Vinyl_Mockup_2.jpg",
-      "/imports/24kmagic_images/VInil-1-bruno-mars.jpg",
-      "/imports/24kmagic_images/VInil-2-bruno-mars.jpg",
+      "/imports/24kmagic_images/Bruno-mars-album_cover_finesse_para_web.webp",
+      "/imports/24kmagic_images/Free_Vinyl_Mockup_2.webp",
+      "/imports/24kmagic_images/VInil-1-bruno-mars.webp",
+      "/imports/24kmagic_images/VInil-2-bruno-mars.webp",
     ],
     translations: {
       en: {
@@ -178,11 +178,11 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator"],
     files: [],
     color: "from-blue-700 to-cyan-600",
-    image: "/images/regenerated_image_1778211137770.jpg",
+    image: "/images/regenerated_image_1778211137770.webp",
     gallery: [
-      "/images/regenerated_image_1778211137770.jpg",
-      "/images/regenerated_image_1778211222262.png",
-      "/images/regenerated_image_1778211232196.png",
+      "/images/regenerated_image_1778211137770.webp",
+      "/images/regenerated_image_1778211222262.webp",
+      "/images/regenerated_image_1778211232196.webp",
     ],
     translations: {
       en: {
@@ -209,13 +209,13 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign"],
     files: [],
     color: "from-fuchsia-700 to-rose-600",
-    image: "/images/regenerated_image_1778211615718.jpg",
+    image: "/images/regenerated_image_1778211615718.webp",
     gallery: [
-      "/images/regenerated_image_1778211615718.jpg",
-      "/images/regenerated_image_1778212354434.png",
-      "/images/regenerated_image_1778212356032.jpg",
-      "/images/regenerated_image_1778213078006.png",
-      "/images/regenerated_image_1778213157796.jpg",
+      "/images/regenerated_image_1778211615718.webp",
+      "/images/regenerated_image_1778212354434.webp",
+      "/images/regenerated_image_1778212356032.webp",
+      "/images/regenerated_image_1778213078006.webp",
+      "/images/regenerated_image_1778213157796.webp",
     ],
     translations: {
       en: {
