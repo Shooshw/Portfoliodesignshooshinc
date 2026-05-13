@@ -31,7 +31,7 @@ export const ASSETS = {
 
   // League of Legends Project
   lolLogo: "/images/lol-logo-rendered-hi-res.png",
-  lolNeekoVideo: "/images/neeko-guardiao.mp4",
+  lolNeekoVideo: "/images/Neeko-video.mp4",
   lolBlitzcrankVideo: "/images/blitzcrank-goleiro.mp4",
   lolChogathVideo: "/images/chogath-cavalheiro.mp4",
   lolZedVideo: "/images/zed-galante.mp4",
