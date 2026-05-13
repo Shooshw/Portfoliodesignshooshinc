@@ -44,7 +44,7 @@ export function Respiracao() {
   return (
     <div className="bg-gradient-to-b from-[#0a4874] to-[#121c22] relative w-full h-[600px] mx-auto overflow-hidden font-sans max-w-[400px] shadow-2xl flex flex-col items-center rounded-3xl">
       <div className="absolute inset-0 overflow-hidden mix-blend-overlay opacity-30 pointer-events-none">
-        <video autoPlay className="absolute h-full w-full object-cover" controlsList="nodownload" loop playsInline muted>
+        <video preload="metadata" autoPlay className="absolute h-full w-full object-cover" controlsList="nodownload" loop playsInline muted>
           <source src="https://assets.mixkit.co/videos/preview/mixkit-top-view-of-waves-hitting-the-shore-4130-large.mp4" />
         </video>
       </div>
@@ -156,7 +156,7 @@ export function Rmp() {
   return (
     <div className="bg-gradient-to-b from-[#1c5541] to-[#25463f] relative w-full h-[600px] mx-auto overflow-hidden font-sans max-w-[400px] shadow-2xl flex flex-col items-center rounded-3xl">
       <div className="absolute inset-0 overflow-hidden mix-blend-overlay opacity-60 pointer-events-none">
-        <video autoPlay className="absolute h-full w-full object-cover" controlsList="nodownload" loop playsInline muted>
+        <video preload="metadata" autoPlay className="absolute h-full w-full object-cover" controlsList="nodownload" loop playsInline muted>
           <source src="https://assets.mixkit.co/videos/preview/mixkit-top-view-of-waves-hitting-the-shore-4130-large.mp4" />
         </video>
       </div>
@@ -279,7 +279,7 @@ export function Grounding() {
   return (
     <div className="bg-gradient-to-b from-[#2a1b4d] to-[#120a22] relative w-full h-[600px] mx-auto overflow-hidden font-sans max-w-[400px] shadow-2xl flex flex-col items-center rounded-3xl">
       <div className="absolute inset-0 overflow-hidden mix-blend-overlay opacity-30 pointer-events-none">
-        <video autoPlay className="absolute h-full w-full object-cover" controlsList="nodownload" loop playsInline muted>
+        <video preload="metadata" autoPlay className="absolute h-full w-full object-cover" controlsList="nodownload" loop playsInline muted>
           <source src="https://assets.mixkit.co/videos/preview/mixkit-top-view-of-waves-hitting-the-shore-4130-large.mp4" />
         </video>
       </div>
