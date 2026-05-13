@@ -1,4 +1,4 @@
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import {
   Mail,
   Linkedin,
@@ -17,6 +17,7 @@ import {
 import { useLanguage } from "../contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 
 const ACCENT = "#C8392B";
 

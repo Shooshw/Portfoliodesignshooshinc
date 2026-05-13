@@ -6,6 +6,7 @@ import { useTheme } from "../contexts/theme-context";
 import { secondaryProjects } from "../data/projects";
 import type { Project } from "../data/projects";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ASSETS } from "../data/assets";
 
 interface ParallaxProjectCardProps {
   project: Project;
@@ -259,7 +260,7 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
                   {indieSynthProject.gallery && indieSynthProject.gallery.length > 1 && (
                     <div className="w-full mt-auto flex-1 rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl relative min-h-[200px] hidden md:block">
                       <ImageWithFallback
-                        src="/images/indiesynth-detail.jpg"
+                        src={ASSETS.indieSynthDetail}
                         alt="IndieSynth Detail"
                         className="w-full h-full object-cover absolute inset-0 scale-[1.35] object-center"
                       />

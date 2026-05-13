@@ -1,11 +1,12 @@
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ParallaxImage } from "./parallax-image";
 import { motion, AnimatePresence } from "motion/react";
 import { X, ExternalLink, ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { Project } from "../data/projects";
 import { Respiracao, Rmp, Grounding } from "./aquora-exercises";
 import { useLanguage } from "../contexts/language-context";
-
+import { ASSETS } from "../data/assets";
 
 interface AquoraProjectProps {
   project: Project;
@@ -197,7 +198,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
               <div className="absolute top-1/4 left-4 w-5 h-5 bg-purple-300 rounded-sm blur-[2px] rotate-45" />
             </div>
             
-            <ImageWithFallback src="/images/aquora-logo.png" alt="Aquora Logo" loading="lazy" decoding="async" className="relative z-10 w-48 h-48 object-contain drop-shadow-xl p-2" />
+            <ImageWithFallback src={ASSETS.aquoraLogo} alt="Aquora Logo" loading="lazy" decoding="async" className="relative z-10 w-48 h-48 object-contain drop-shadow-xl p-2" />
           </div>
 
           <motion.div 
@@ -276,7 +277,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             {/* Logo Section */}
             <div className="md:col-span-2 md:row-span-2 bg-white/40 backdrop-blur-xl rounded-[3rem] border border-white/60 p-8 flex items-center justify-center overflow-hidden relative">
               <div className="absolute inset-0 bg-gradient-to-br from-teal-500/10 to-blue-500/10" />
-              <ImageWithFallback src="/images/aquora-logo.png" alt="Aquora Logo" loading="lazy" decoding="async" className="relative z-10 w-full h-full object-contain p-12 drop-shadow-2xl" />
+              <ImageWithFallback src={ASSETS.aquoraLogo} alt="Aquora Logo" loading="lazy" decoding="async" className="relative z-10 w-full h-full object-contain p-12 drop-shadow-2xl" />
             </div>
 
             {/* Colors Section */}
@@ -468,7 +469,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             {/* Screen 1 */}
             <div className="flex flex-col gap-2">
               <div className="group relative w-full aspect-[9/16] bg-gradient-to-b from-gray-100 to-gray-200/50 rounded-[1.5rem] border border-white mx-auto shadow-md overflow-hidden flex items-center justify-center p-4">
-                <ImageWithFallback src="/images/aquora-home-login.png" alt={tLoc.homeLogin} loading="lazy" decoding="async" className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105" />
+                <ParallaxImage src={ASSETS.aquoraHomeLogin} alt="image" className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105" />
               </div>
               <p className="text-center font-bold text-teal-800 text-sm mt-2">{tLoc.homeQuick}</p>
             </div>
@@ -476,7 +477,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             {/* Screen 2 */}
             <div className="flex flex-col gap-2 mt-6 md:mt-0">
               <div className="group relative w-full aspect-[9/16] bg-gradient-to-b from-gray-100 to-gray-200/50 rounded-[1.5rem] border border-white mx-auto shadow-md overflow-hidden flex items-center justify-center p-4">
-                <ImageWithFallback src="/images/aquora-sleep-config.png" alt={tLoc.sleepConfig} loading="lazy" decoding="async" className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105" />
+                <ParallaxImage src={ASSETS.aquoraSleepConfig} alt="image" className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105" />
               </div>
               <p className="text-center font-bold text-teal-800 text-sm mt-2">{tLoc.sleepConfig}</p>
             </div>
@@ -484,7 +485,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             {/* Screen 3 */}
             <div className="flex flex-col gap-2">
               <div className="group relative w-full aspect-[9/16] bg-gradient-to-b from-gray-100 to-gray-200/50 rounded-[1.5rem] border border-white mx-auto shadow-md overflow-hidden flex items-center justify-center p-4">
-                <ImageWithFallback src="/images/aquora-routine-mon.png" alt={tLoc.routineMon} loading="lazy" decoding="async" className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105" />
+                <ParallaxImage src={ASSETS.aquoraRoutineMon} alt="image" className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105" />
               </div>
               <p className="text-center font-bold text-teal-800 text-sm mt-2">{tLoc.routineMon}</p>
             </div>
@@ -492,7 +493,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
             {/* Screen 4 */}
             <div className="flex flex-col gap-2 mt-6 md:mt-0">
               <div className="group relative w-full aspect-[9/16] bg-gradient-to-b from-gray-100 to-gray-200/50 rounded-[1.5rem] border border-white mx-auto shadow-md overflow-hidden flex items-center justify-center p-4">
-                <ImageWithFallback src="/images/aquora-emergency.png" alt={tLoc.emergency} loading="lazy" decoding="async" className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105" />
+                <ParallaxImage src={ASSETS.aquoraEmergency} alt="image" className="w-full h-full object-contain rounded-md transition-transform duration-700 group-hover:scale-105" />
               </div>
               <p className="text-center font-bold text-teal-800 text-sm mt-2">{tLoc.emergency}</p>
             </div>
@@ -503,7 +504,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
           <div className="grid grid-cols-1 gap-6 relative mt-12">
             <div className="group relative w-full h-auto bg-gradient-to-b from-gray-100 to-gray-200/50 backdrop-blur-xl border border-white/60 rounded-[3rem] shadow-sm overflow-hidden flex items-center justify-center">
               <img 
-                src="/images/design-system.png" 
+                src={ASSETS.aquoraDesignSystem} 
                 alt={tLoc.dsAlt} 
                 loading="lazy" 
                 decoding="async"
@@ -523,21 +524,21 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
              <div className="group overflow-hidden rounded-3xl relative h-[400px] shadow-sm hover:shadow-xl transition-all duration-500">
-                <ImageWithFallback src="/images/aquora-various-apps.png" alt={tLoc.variousApps} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <ParallaxImage src={ASSETS.aquoraVariousApps} alt="image" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                    <span className="text-white font-bold text-lg">{tLoc.variousApps}</span>
                 </div>
              </div>
              
              <div className="group overflow-hidden rounded-3xl relative h-[400px] shadow-sm hover:shadow-xl transition-all duration-500 bg-white">
-                <ImageWithFallback src="/images/aquora-support-mat.png" alt={tLoc.supportMat} loading="lazy" decoding="async" className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" />
+                <ImageWithFallback src={ASSETS.aquoraSupportMat} alt={tLoc.supportMat} loading="lazy" decoding="async" className="w-full h-full object-contain p-4 transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
                    <span className="text-white font-bold text-lg">{tLoc.supportMat}</span>
                 </div>
              </div>
              
              <div className="md:col-span-2 group overflow-hidden rounded-3xl relative h-[500px] shadow-sm hover:shadow-xl transition-all duration-500 border border-white/50">
-                <ImageWithFallback src="/images/aquora-office-rec.png" alt={tLoc.officeRec} loading="lazy" decoding="async" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                <ParallaxImage src={ASSETS.aquoraOfficeRec} alt="image" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-8">
                    <span className="text-white font-bold text-xl">{tLoc.officeRec}</span>
                 </div>

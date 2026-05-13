@@ -1,3 +1,5 @@
+import { ASSETS } from "./assets";
+
 export interface ProjectFile {
   name: string;
   type: "pdf" | "figma" | "zip" | "link";
@@ -112,7 +114,7 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator", "Blender"],
     files: [],
     color: "from-purple-800 to-pink-600",
-    image: "/images/mirror-ado-project.jpg",
+    image: ASSETS.posterAdo,
     translations: {
       en: {
         title: "Mirror - ADO",
@@ -136,12 +138,12 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign", "Lightroom"],
     files: [],
     color: "from-orange-700 to-red-600",
-    image: "/images/bruno-mars-album cover, finesse para web.jpg",
+    image: ASSETS.brunoMarsCover,
     gallery: [
-      "/images/bruno-mars-album cover, finesse para web.jpg",
-      "/images/Free_Vinyl_Mockup_2.jpg",
-      "/images/VInil-1-bruno-mars.jpg",
-      "/images/VInil-2-bruno-mars.jpg",
+      ASSETS.brunoMarsCover,
+      ASSETS.brunoMarsVinyl2,
+      ASSETS.brunoMarsVinyl1,
+      ASSETS.brunoMarsVinyl1Alt,
     ],
     translations: {
       en: {
@@ -165,12 +167,12 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe Illustrator"],
     files: [],
     color: "from-blue-700 to-cyan-600",
-    image: "/images/Virtual-INsanity.jpg",
+    image: ASSETS.virtualInsanity,
     gallery: [
-      "/images/Virtual-INsanity.jpg",
-      "/images/Poster_Glued_To_Wall_Mockup_1.jpg",
-      "/images/Free_Citylight_Poster_Mockup_1.png",
-      "/images/Free_Citylight_Poster_Mockup_VI.png",
+      ASSETS.virtualInsanity,
+      ASSETS.virtualInsanityPoster1,
+      ASSETS.virtualInsanityCitylight1,
+      ASSETS.virtualInsanityCitylight6,
     ],
     translations: {
       en: {
@@ -194,13 +196,13 @@ export const projects: Project[] = [
     tools: ["Adobe Photoshop", "Adobe InDesign"],
     files: [],
     color: "from-fuchsia-700 to-rose-600",
-    image: "/images/chapeuzinho-project.jpg",
+    image: ASSETS.chapeuzinho1,
     gallery: [
-      "/images/chapeuzinho-project.jpg",
-      "/images/chapeuzinho-project-2.png",
-      "/images/chapeuzinho-project-3.jpg",
-      "/images/chapeuzinho-project-4.png",
-      "/images/chapeuzinho-project-5.jpg",
+      ASSETS.chapeuzinho1,
+      ASSETS.chapeuzinho2,
+      ASSETS.chapeuzinho3,
+      ASSETS.chapeuzinho4,
+      ASSETS.chapeuzinho5,
     ],
     translations: {
       en: {

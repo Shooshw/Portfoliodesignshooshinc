@@ -6,6 +6,7 @@ import { mainProjects } from "../data/projects";
 import type { Project } from "../data/projects";
 import { useRef } from "react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { ASSETS } from "../data/assets";
 
 
 interface ProjectsMainProps {
@@ -82,12 +83,12 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
               <div className="relative h-[420px] overflow-hidden bg-[#0D0D0D]">
                 {isAquora ? (
                    <>
-                     <ImageWithFallback src="/images/aquora-logo.png" alt="Aquora" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain p-8 bg-gradient-to-tr from-[#fdfbfb] via-[#e2ebf0] to-[#fdfbfb] transition-transform duration-700 z-10 group-hover:opacity-0" />
-                     <video src="/images/aquora-video.mp4" loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.10] group-hover:scale-[1.13] transition-transform duration-700 z-0" />
+                     <ImageWithFallback src={ASSETS.aquoraLogo} alt="Aquora" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain p-8 bg-gradient-to-tr from-[#fdfbfb] via-[#e2ebf0] to-[#fdfbfb] transition-transform duration-700 z-10 group-hover:opacity-0" />
+                     <video src={ASSETS.aquoraVideo} loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.10] group-hover:scale-[1.13] transition-transform duration-700 z-0" />
                    </>
                 ) : isLol ? (
                    <>
-                     <video src="/images/neeko-live-wallpaper.mp4" autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.5] transition-transform duration-700 z-0" />
+                     <video src={ASSETS.lolNeekoVideo} autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.5] transition-transform duration-700 z-0" />
                    </>
                 ) : project.image ? (
                   <ImageWithFallback

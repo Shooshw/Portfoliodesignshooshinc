@@ -16,7 +16,9 @@ import { Badge } from "./ui/badge";
 import { useLanguage } from "../contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
 import { useState } from "react";
-const cvPDF = "/images/Curriculo_design_PTBR2026-1.pdf";
+import { ASSETS } from "../data/assets";
+
+const cvPDF = ASSETS.cvPdf;
 
 interface SkillWithTooltip {
   key: string;
