@@ -121,8 +121,9 @@ export function Hero() {
           style={{ y: useTransform(scrollYProgress, [0, 1], [0, 50]) }}
           className={`p-6 rounded-2xl border backdrop-blur-sm shadow-sm text-center ${panelBg} ${borderFaint}`}
         >
-          <p className={`text-[0.5rem] tracking-[0.3em] uppercase mb-1 ${textMuted}`}>Stamp</p>
-          <p className={`font-display text-4xl italic font-semibold leading-none ${textMain}`}>13</p>
+          <p className={`text-[0.5rem] tracking-[0.3em] uppercase mb-1 ${textMuted}`}>Focus</p>
+          <p className={`font-display text-3xl italic font-semibold leading-none ${textMain}`}>UI/UX</p>
+          <p className={`font-sans text-[0.55rem] font-bold tracking-[0.2em] mt-2 uppercase ${textMuted}`}>Web Design</p>
         </motion.div>
       </div>
 

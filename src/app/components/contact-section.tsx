@@ -191,9 +191,6 @@ export function ContactSection() {
                   <span className={`font-display italic text-2xl font-bold tracking-tight opacity-20 ${textPrimary}`}>
                     Shoosh.inc
                   </span>
-                  <span className={`font-sans text-[0.55rem] font-bold tracking-[0.3em] uppercase opacity-30 ${textPrimary}`}>
-                    Tokyo · SP · 2024
-                  </span>
                 </div>
               </div>
             </motion.div>
