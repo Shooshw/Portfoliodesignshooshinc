@@ -29,15 +29,15 @@ export function Root() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
-  const bg = isDark ? "bg-[#0D0D0D]" : "bg-[#F5F5F3]";
-  const text = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
+  const bg = isDark ? "bg-black" : "bg-[#F5F5F3]";
+  const text = isDark ? "text-white" : "text-[#0D0D0D]";
 
   return (
     <div className={`min-h-screen transition-colors duration-700 ${bg} ${text}`}>
       {/* Progress Bar Container */}
       <div className="fixed top-0 left-0 right-0 z-[250] h-1.5 w-full bg-transparent overflow-hidden">
         <motion.div 
-          className="h-full bg-[#C8392B] origin-left shadow-[0_0_10px_#C8392B]"
+          className={`h-full origin-left transition-all ${isDark ? "bg-[#3054ff] shadow-[0_0_10px_#3054ff]" : "bg-[#C8392B] shadow-[0_0_10px_#C8392B]"}`}
           style={{ width: `${scrollProgress}%` }}
         />
       </div>

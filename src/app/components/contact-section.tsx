@@ -20,12 +20,12 @@ export function ContactSection() {
     });
   };
 
-  const bg = isDark ? "bg-[#0D0D0D]" : "bg-[#F5F5F3]";
-  const textPrimary = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
-  const textSecondary = isDark ? "text-[#F2F2F0]/60" : "text-[#0D0D0D]/60";
-  const textMuted = isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40";
-  const border = isDark ? "border-[#F2F2F0]/10" : "border-[#0D0D0D]/10";
-  const surface = isDark ? "bg-[#111111]" : "bg-white";
+  const bg = isDark ? "bg-black" : "bg-[#FAF9F6]";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textSecondary = isDark ? "text-white/60" : "text-[#0D0D0D]/70";
+  const textMuted = isDark ? "text-white/40" : "text-black/40";
+  const border = isDark ? "border-white/10" : "border-black/[0.06]";
+  const surface = isDark ? "bg-[#0A0A0A]" : "bg-white/95 backdrop-blur-md shadow-sm";
 
   const contactMethods = [
     {
@@ -142,7 +142,7 @@ export function ContactSection() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className={`relative rounded-[3.5rem] p-12 md:p-16 border overflow-hidden ${isDark ? "bg-[#111111]/80 shadow-2xl border-white/5" : "bg-white shadow-xl border-black/5"}`}
+              className={`relative rounded-[3.5rem] p-12 md:p-16 border overflow-hidden ${isDark ? "bg-[#0A0A0A]/85 shadow-2xl border-white/10" : "bg-white shadow-xl border-black/5"}`}
             >
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none" />
               

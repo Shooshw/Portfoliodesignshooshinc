@@ -9,11 +9,11 @@ export function EducationSection() {
   const { t } = useLanguage();
   const { isDark } = useTheme();
 
-  const bg       = isDark ? "bg-[#111111]" : "bg-[#F5F5F3]";
-  const textPrimary = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
-  const textMuted = isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40";
-  const cardBg   = isDark ? "bg-[#0D0D0D]" : "bg-white";
-  const border   = isDark ? "border-[#F2F2F0]/10" : "border-[#0D0D0D]/10";
+  const bg       = isDark ? "bg-black" : "bg-[#FAF9F6]";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textMuted = isDark ? "text-white/40" : "text-black/40";
+  const cardBg   = isDark ? "bg-[#0A0A0A]" : "bg-white/90 backdrop-blur-md shadow-sm";
+  const border   = isDark ? "border-white/10" : "border-black/[0.06]";
 
   const education = [
     { period: t("academic.degree1.period"), title: t("academic.degree1.title"), institution: t("academic.degree1.institution") },

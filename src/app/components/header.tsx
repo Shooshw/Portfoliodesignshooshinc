@@ -64,16 +64,16 @@ export function Header() {
     }
   };
 
-  const textPrimary = "text-[#F2F2F0]";
-  const textMuted = "text-[#F2F2F0]/60";
-  const pillBg = "bg-white/5 hover:bg-white/10";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textMuted = isDark ? "text-white/60" : "text-black/60";
+  const pillBg = isDark ? "bg-white/5 hover:bg-white/15 border border-white/5" : "bg-black/5 hover:bg-black/10 border border-black/5";
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-[100] w-full transition-colors duration-700 pointer-events-none">
-      <div className="w-full pointer-events-auto bg-[#0a0a0a]/70 backdrop-blur-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 w-full bg-transparent p-0 transition-all duration-700 pointer-events-none">
+      <div className="w-full pointer-events-auto bg-transparent">
         
         {/* Main Header Row */}
-        <div className="mx-auto w-full max-w-[1500px] flex items-center justify-between px-6 lg:px-12 py-4">
+        <div className="w-full flex items-center justify-between px-6 py-4">
           
           {/* Left: Branding & Menu */}
           <div className="flex items-center gap-4 sm:gap-6 z-10">
@@ -88,7 +88,9 @@ export function Header() {
             </motion.button>
 
             <button onClick={handleReturnHome} className="flex flex-col select-none group text-left pt-0.5">
-              <span className={`font-display font-semibold italic text-xl md:text-2xl leading-none tracking-tighter transition-colors group-hover:text-white ${textPrimary}`}>
+              <span className={`font-display font-semibold italic text-xl md:text-2xl leading-none tracking-tighter transition-all ${
+                isDark ? "group-hover:text-[#3054ff]" : "group-hover:text-[#C8392B]"
+              } ${textPrimary}`}>
                 Shoosh.inc
               </span>
             </button>
@@ -103,7 +105,9 @@ export function Header() {
                     <button 
                       key={link.name} 
                       onClick={() => handleNavClick(link.href)}
-                      className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-sans text-[0.8rem] font-medium transition-all ${pillBg} ${textPrimary} whitespace-nowrap`}
+                      className={`flex items-center gap-2 px-5 py-2.5 rounded-full font-sans text-[0.8rem] font-medium transition-all ${pillBg} ${textPrimary} ${
+                        isDark ? "hover:text-[#3054ff]" : "hover:text-[#C8392B]"
+                      } whitespace-nowrap`}
                     >
                       <Icon size={16} className="opacity-70" />
                       {link.name}
@@ -116,7 +120,9 @@ export function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={toggleLanguage}
-              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-[0.7rem] font-bold uppercase transition-all ${pillBg} ${textPrimary}`}
+              className={`flex items-center justify-center gap-2 px-4 py-2.5 rounded-full text-[0.7rem] font-bold uppercase transition-all ${pillBg} ${textPrimary} ${
+                isDark ? "hover:text-[#3054ff]" : "hover:text-[#C8392B]"
+              }`}
               aria-label={t("header.language") || "Language toggler"}
             >
               <Globe size={16} className="opacity-70" />
@@ -127,7 +133,9 @@ export function Header() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={toggleTheme}
-              className={`p-3 hidden sm:flex rounded-full transition-all ${pillBg} ${textPrimary}`}
+              className={`p-3 hidden sm:flex rounded-full transition-all ${pillBg} ${textPrimary} ${
+                isDark ? "hover:text-[#3054ff]" : "hover:text-[#C8392B]"
+              }`}
               aria-label={isDark ? "Light mode" : "Dark mode"}
             >
               {isDark ? <Sun size={15} className="opacity-80" /> : <Moon size={15} className="opacity-80" />}

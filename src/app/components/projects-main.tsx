@@ -17,16 +17,16 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
   const { t, language } = useLanguage();
   const { isDark } = useTheme();
 
-  const bg = isDark ? "bg-[#0D0D0D]" : "bg-[#F5F5F3]";
-  const textPrimary = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
-  const textMuted = isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40";
-  const cardBg = isDark ? "bg-[#111111]" : "bg-white";
-  const border = isDark ? "border-[#F2F2F0]/10" : "border-[#0D0D0D]/10";
-  const tooltipBg = isDark ? "bg-[#F2F2F0]" : "bg-[#0D0D0D]";
-  const tooltipText = isDark ? "text-[#0D0D0D]" : "text-[#F2F2F0]";
+  const bg = isDark ? "bg-black" : "bg-[#FAF9F6]";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textMuted = isDark ? "text-white/40" : "text-black/40";
+  const cardBg = isDark ? "bg-[#0A0A0A]" : "bg-white";
+  const border = isDark ? "border-white/10" : "border-black/[0.06]";
+  const tooltipBg = isDark ? "bg-white" : "bg-black";
+  const tooltipText = isDark ? "text-black" : "text-white";
 
   return (
-    <section id="projects" className={`py-32 relative transition-colors duration-700 ${bg}`}>
+    <section id="projects" className={`py-32 relative transition-all duration-700 ${bg}`}>
       <div className="max-w-7xl mx-auto px-6">
 
         {/* Section Header */}
@@ -38,14 +38,15 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
           className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20"
         >
           <div className="max-w-2xl">
-            <p className={`font-sans text-[0.65rem] font-bold tracking-[0.4em] uppercase mb-6 ${textMuted}`}>
+            <p className={`font-sans text-[0.65rem] font-bold tracking-[0.4em] uppercase mb-6 ${textMuted} flex items-center gap-2`}>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#C8392B]" />
               ✦ Selective Work ✦
             </p>
-            <h2 className={`font-display font-semibold italic text-[clamp(2.8rem,5vw,4.5rem)] tracking-tighter leading-[0.9] ${textPrimary}`}>
+            <h2 className={`font-display font-[#0D0D0D] font-semibold italic text-[clamp(2.8rem,5vw,4.5rem)] tracking-tighter leading-[0.9] ${textPrimary}`}>
               {t("projects.main.title")}
             </h2>
           </div>
-          <p className={`font-sans text-sm md:text-right max-w-sm leading-relaxed opacity-60 ${textPrimary}`}>
+          <p className={`font-sans text-sm md:text-right max-w-sm leading-relaxed opacity-75 ${textPrimary}`}>
             {t("projects.main.subtitle")}
           </p>
         </motion.div>
@@ -64,7 +65,11 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
               viewport={{ once: true }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               onClick={() => onProjectClick(project)}
-              className={`group relative flex flex-col rounded-[2.5rem] border overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 ${cardBg} ${border} shadow-sm hover:shadow-2xl`}
+              className={`group relative flex flex-col rounded-[2.5rem] border overflow-hidden cursor-pointer transition-all duration-500 hover:-translate-y-2 ${cardBg} ${border} shadow-sm ${
+                isDark 
+                  ? "hover:border-white/20 hover:shadow-[0_20px_50px_rgba(255,255,255,0.03)]" 
+                  : "hover:border-[#C8392B]/30 hover:shadow-[0_25px_60px_rgba(200,57,43,0.12)]"
+              }`}
               onMouseEnter={(e) => {
                 const vid = e.currentTarget.querySelector('video');
                 if (vid) {
@@ -80,7 +85,7 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
                 }
               }}
             >
-              <div className="relative h-[420px] overflow-hidden bg-[#0D0D0D]">
+              <div className="relative h-[420px] overflow-hidden bg-black">
                 {isAquora ? (
                    <>
                      <ImageWithFallback src={ASSETS.aquoraLogo} alt="Aquora" loading="lazy" decoding="async" className="absolute inset-0 w-full h-full object-contain p-8 bg-gradient-to-tr from-[#fdfbfb] via-[#e2ebf0] to-[#fdfbfb] transition-transform duration-700 z-10 group-hover:opacity-0" />
@@ -91,17 +96,19 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
                      <video src={ASSETS.lolNeekoVideo} autoPlay loop playsInline muted className="absolute inset-0 w-full h-full object-cover scale-[1.5] transition-transform duration-700 z-0" />
                    </>
                 ) : project.image ? (
-                  <ImageWithFallback
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  />
+                   <ImageWithFallback
+                     src={project.image}
+                     alt={project.title}
+                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                   />
                 ) : (
                   <div className={`w-full h-full bg-gradient-to-br ${project.color} opacity-40 transition-transform duration-700 group-hover:scale-[1.03]`} />
                 )}
                 
                 {/* Overlay on hover (VER DETALHES bar) */}
-                <div className="absolute -bottom-px left-0 right-0 h-16 bg-black/60 backdrop-blur-md flex items-center justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20">
+                <div className={`absolute -bottom-px left-0 right-0 h-16 backdrop-blur-md flex items-center justify-center translate-y-full group-hover:translate-y-0 transition-transform duration-500 z-20 ${
+                  isDark ? "bg-black/60 shadow-[0_-5px_15px_rgba(255,255,255,0.05)]" : "bg-[#C8392B]/95 shadow-[0_-5px_15px_rgba(200,57,43,0.2)]"
+                }`}>
                   <span className="text-white font-sans text-[0.7rem] font-bold tracking-widest uppercase flex items-center gap-2">
                     {t("projects.viewDetails") || "VER DETALHES"} <ArrowUpRight size={14} />
                   </span>
@@ -121,11 +128,11 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
                   <h3 className={`font-display font-semibold italic text-2xl tracking-tighter transition-colors group-hover:text-[#C8392B] ${textPrimary}`}>
                     {project.translations?.[language]?.title || project.title}
                   </h3>
-                  <span className={`font-sans text-[0.65rem] font-bold tracking-widest opacity-30 ${textPrimary}`}>
+                  <span className={`font-sans text-[0.65rem] font-bold tracking-widest opacity-40 ${textPrimary}`}>
                     {project.year}
                   </span>
                 </div>
-                <p className={`font-sans text-sm leading-relaxed mb-8 opacity-60 line-clamp-2 ${textPrimary}`}>
+                <p className={`font-sans text-sm leading-relaxed mb-8 opacity-75 line-clamp-2 ${textPrimary}`}>
                   {project.translations?.[language]?.description || project.description}
                 </p>
                 <div className="relative group/tooltip">
@@ -133,7 +140,11 @@ export function ProjectsMain({ onProjectClick }: ProjectsMainProps) {
                     {project.tools.slice(0, 3).map((tool, idx) => (
                       <span
                         key={idx}
-                        className={`px-3 py-1 rounded-lg font-sans text-[0.6rem] font-bold tracking-wider uppercase border ${border} ${textMuted}`}
+                        className={`px-3 py-1 rounded-lg font-sans text-[0.6rem] font-bold tracking-wider uppercase border transition-all ${
+                          isDark 
+                            ? "border-white/10 hover:border-white/20 hover:bg-white/5" 
+                            : "border-black/[0.08] hover:border-[#C8392B]/30 hover:bg-[#C8392B]/5 hover:text-[#C8392B]"
+                        } ${textMuted}`}
                       >
                         {tool}
                       </span>

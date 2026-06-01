@@ -82,12 +82,12 @@ export function Contact() {
     }
   };
 
-  const bg = isDark ? "bg-[#0D0D0D]" : "bg-[#F5F5F3]";
-  const textPrimary = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
-  const textMuted = isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40";
-  const surface = isDark ? "bg-[#111111]" : "bg-white";
-  const border = isDark ? "border-[#F2F2F0]/10" : "border-[#0D0D0D]/10";
-  const inputBg = isDark ? "bg-[#F2F2F0]/5" : "bg-white";
+  const bg = isDark ? "bg-black" : "bg-[#F5F5F3]";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textMuted = isDark ? "text-white/40" : "text-[#0D0D0D]/40";
+  const surface = isDark ? "bg-[#0A0A0A]" : "bg-white";
+  const border = isDark ? "border-white/10" : "border-[#0D0D0D]/10";
+  const inputBg = isDark ? "bg-white/5" : "bg-white";
 
   return (
     <div className={`min-h-screen py-32 transition-colors duration-700 ${bg}`}>

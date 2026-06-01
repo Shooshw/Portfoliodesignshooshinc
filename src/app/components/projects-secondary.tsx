@@ -30,6 +30,7 @@ function ParallaxProjectCard({
   t,
 }: ParallaxProjectCardProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const { isDark } = useTheme();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["start end", "end start"],
@@ -37,15 +38,22 @@ function ParallaxProjectCard({
 
   const y = useTransform(scrollYProgress, [0, 1], [-20, 20]);
   const rotateX = useTransform(scrollYProgress, [0, 1], [15, -15]);
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1.1, 0.9]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.95, 1.05, 0.95]);
 
-  // Use the project color class to extract a hex or just rely on a CSS variable
+  const cardBorder = isDark 
+    ? (isPoster ? "border-white/5" : "border-white/10") 
+    : (isPoster ? "border-black/[0.05]" : "border-black/[0.08]");
+
+  const cardShadow = isDark 
+    ? (isPoster ? "shadow-[0_-20px_50px_-15px_rgba(255,255,255,0.05),0_20px_50px_-15px_rgba(0,0,0,0.6)]" : "shadow-2xl")
+    : (isPoster ? "shadow-[0_-5px_15px_rgba(200,57,43,0.04),0_15px_35px_rgba(200,57,43,0.1)] hover:shadow-[0_20px_50px_rgba(200,57,43,0.2)]" : "shadow-md hover:shadow-xl");
+
   return (
     <motion.div
       ref={ref}
       style={{ perspective: 1000, maxWidth, aspectRatio }}
       onClick={onClick}
-      className={`relative w-full overflow-hidden ${isPoster ? "rounded-sm shadow-[0_-20px_50px_-15px_rgba(255,255,255,0.15),0_20px_50px_-15px_rgba(0,0,0,0.5)] border border-white/5" : "rounded-[2rem] border border-white/10 shadow-2xl"} cursor-pointer group backdrop-blur-md`}
+      className={`relative w-full overflow-hidden transition-all duration-500 ${isPoster ? "rounded-sm" : "rounded-[2rem]"} ${cardBorder} ${cardShadow} cursor-pointer group backdrop-blur-md`}
     >
       <motion.div
         style={{ rotateX, y, scale }}
@@ -67,7 +75,7 @@ function ParallaxProjectCard({
                   src={project.image || ""}
                   alt={project.title}
                   style={{ objectFit: "cover", width: "100%", height: "100%" }}
-                  className="group-hover:saturate-150 transition-all duration-700"
+                  className="group-hover:saturate-150 transition-all duration-700 font-sans"
                 />
               </div>
               <div className="flex-1 w-full flex bg-black border-t border-white/10">
@@ -110,9 +118,13 @@ function ParallaxProjectCard({
 
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-white/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none mix-blend-overlay" />
       </motion.div>
-      <div className="absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/40 backdrop-blur-[2px]">
+      <div className={`absolute inset-0 flex flex-col items-center justify-center p-6 opacity-0 group-hover:opacity-100 transition-all duration-500 backdrop-blur-[2px] ${
+        isDark ? "bg-black/40" : "bg-[#C8392B]/90"
+      }`}>
         {/* Hover interaction hint */}
-        <ArrowUpRight size={24} className="text-[#00f2ff] scale-75 group-hover:scale-100 transition-transform duration-500" />
+        <ArrowUpRight size={28} className={`scale-75 group-hover:scale-110 transition-transform duration-550 ${
+          isDark ? "text-white" : "text-white shadow-lg"
+        }`} />
       </div>
     </motion.div>
   );
@@ -126,9 +138,9 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
   const { t, language } = useLanguage();
   const { isDark } = useTheme();
 
-  const bg = isDark ? "bg-[#050507]" : "bg-[#f5f5f7]";
-  const textPrimary = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
-  const textMuted = isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40";
+  const bg = isDark ? "bg-black" : "bg-[#FAF9F6]";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textMuted = isDark ? "text-white/40" : "text-black/40";
 
   const musicJamProjects = secondaryProjects.filter((p) =>
     [
@@ -163,7 +175,7 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
   return (
     <section
       id="projects-secondary"
-      className={`pt-48 pb-32 relative overflow-hidden transition-colors duration-700 ${bg}`}
+      className={`pt-48 pb-32 relative overflow-hidden transition-all duration-700 ${bg}`}
     >
       {/* Prismatic Grain Overlay */}
       <div className="absolute inset-0 opacity-[0.03] pointer-events-none mix-blend-overlay bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
@@ -179,7 +191,11 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
           <div className="mb-12">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
               <div>
-                <div className="inline-block font-['Space_Mono'] uppercase tracking-[0.2em] text-[0.7rem] text-white/50 bg-black/40 px-4 py-2 border-l border-[#00f2ff] backdrop-blur-md mb-6">
+                <div className={`inline-block font-sans font-bold text-[0.6rem] tracking-[0.25em] uppercase px-4 py-2 border-l backdrop-blur-md mb-6 rounded-r-md transition-all ${
+                  isDark 
+                    ? "text-white/60 bg-white/5 border-[#C8392B]" 
+                    : "text-black/60 bg-black/5 border-[#C8392B] shadow-sm"
+                }`}>
                   System: Prismatic.Core
                 </div>
                 <h2
@@ -189,7 +205,7 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
                 </h2>
               </div>
               <p
-                className={`font-sans text-sm md:text-right max-w-sm leading-relaxed opacity-60 ${textPrimary}`}
+                className={`font-sans text-sm md:text-right max-w-sm leading-relaxed opacity-75 ${textPrimary}`}
               >
                 {text.musicJamDesc}
               </p>
@@ -212,7 +228,7 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
                     maxWidth={"85%"}
                   />
                   <div className="mt-6 text-center max-w-[85%]">
-                    <h3 className={`font-bold text-sm tracking-wide ${textPrimary}`}>
+                    <h3 className={`font-bold text-sm tracking-wide transition-colors duration-300 hover:text-[#C8392B] ${textPrimary}`}>
                       {translatedTitle}
                     </h3>
                     <p className={`text-[0.65rem] uppercase tracking-widest opacity-50 mt-1 ${textPrimary}`}>
@@ -229,7 +245,11 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
             <div className="mt-32">
               <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
                 <div>
-                  <div className="inline-block font-['Space_Mono'] uppercase tracking-[0.2em] text-[0.7rem] text-white/50 bg-black/40 px-4 py-2 border-l border-[#ff0073] backdrop-blur-md mb-6">
+                  <div className={`inline-block font-sans font-bold text-[0.6rem] tracking-[0.25em] uppercase px-4 py-2 border-l backdrop-blur-md mb-6 rounded-r-md transition-all ${
+                    isDark 
+                      ? "text-white/60 bg-white/5 border-[#C8392B]" 
+                      : "text-black/60 bg-black/5 border-[#C8392B] shadow-sm"
+                  }`}>
                     System: Retro.Branding
                   </div>
                   <h2
@@ -239,7 +259,7 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
                   </h2>
                 </div>
                 <p
-                  className={`font-sans text-sm md:text-right max-w-sm leading-relaxed opacity-60 ${textPrimary}`}
+                  className={`font-sans text-sm md:text-right max-w-sm leading-relaxed opacity-75 ${textPrimary}`}
                 >
                   {text.indieSynthDesc1}
                 </p>
@@ -248,21 +268,23 @@ export function ProjectsSecondary({ onProjectClick }: ProjectsSecondaryProps) {
               <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-8 items-stretch">
                 <div className="flex flex-col gap-4 justify-between">
                   <div className="flex flex-col gap-4">
-                    <h3 className={`font-bold text-2xl ${textPrimary}`}>
+                    <h3 className={`font-bold text-2xl transition-colors duration-300 hover:text-[#C8392B] ${textPrimary}`}>
                       {indieSynthProject.translations?.[language]?.title || indieSynthProject.title}
                     </h3>
                     <p
-                      className={`opacity-60 text-sm leading-relaxed ${textPrimary}`}
+                      className={`opacity-75 text-sm leading-relaxed ${textPrimary}`}
                     >
                       {text.indieSynthDesc2}
                     </p>
                   </div>
                   {indieSynthProject.gallery && indieSynthProject.gallery.length > 1 && (
-                    <div className="w-full mt-auto flex-1 rounded-[1.5rem] overflow-hidden border border-white/10 shadow-2xl relative min-h-[200px] hidden md:block">
+                    <div className={`w-full mt-auto flex-1 rounded-[1.5rem] overflow-hidden border shadow-2xl relative min-h-[200px] hidden md:block transition-all ${
+                      isDark ? "border-white/10 bg-black" : "border-black/[0.06] bg-white"
+                    }`}>
                       <ImageWithFallback
                         src={ASSETS.indieSynthDetail}
                         alt="IndieSynth Detail"
-                        className="w-full h-full object-cover absolute inset-0 scale-[1.35] object-center"
+                        className="w-full h-full object-cover absolute inset-0 scale-[1.35] object-center transition-transform hover:scale-[1.4]"
                       />
                     </div>
                   )}

@@ -7,17 +7,18 @@ import {
   Code,
   Lightbulb,
 } from "lucide-react";
+import { useLanguage } from "../contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
 
 export function AboutMe() {
   const { t } = useLanguage();
   const { isDark } = useTheme();
 
-  const bg = isDark ? "bg-[#0D0D0D]" : "bg-[#F5F5F3]";
-  const textPrimary = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
-  const textMuted = isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40";
-  const surface = isDark ? "bg-[#111111]" : "bg-white";
-  const border = isDark ? "border-[#F2F2F0]/10" : "border-[#0D0D0D]/10";
+  const bg = isDark ? "bg-black" : "bg-[#FAF9F6]";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textMuted = isDark ? "text-white/40" : "text-black/40";
+  const surface = isDark ? "bg-[#0A0A0A]" : "bg-white/95 backdrop-blur-md shadow-sm";
+  const border = isDark ? "border-white/10" : "border-black/[0.06]";
 
   const technicalSkills = [
     "Adobe Suite", "Office Suite", "3D Modeling", "Figma",

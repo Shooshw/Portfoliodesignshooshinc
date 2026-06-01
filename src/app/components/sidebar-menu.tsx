@@ -50,10 +50,10 @@ export function Sidebar() {
   const location = useLocation();
   const navigate = useNavigate();
 
-  const sideBg = isDark ? "bg-[#0D0D0D]" : "bg-[#F5F5F3]";
-  const sideBorder = isDark ? "border-[#F2F2F0]/8" : "border-[#0D0D0D]/10";
-  const textPrimary = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
-  const textMuted = isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40";
+  const sideBg = isDark ? "bg-black" : "bg-[#F5F5F3]";
+  const sideBorder = isDark ? "border-white/10" : "border-[#0D0D0D]/10";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textMuted = isDark ? "text-white/40" : "text-[#0D0D0D]/40";
   const hoverBg = isDark ? "hover:bg-white/5" : "hover:bg-black/5";
   const surface = isDark ? "bg-white/3" : "bg-black/3";
 

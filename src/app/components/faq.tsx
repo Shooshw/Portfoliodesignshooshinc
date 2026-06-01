@@ -13,11 +13,11 @@ export function FAQ() {
   const { t } = useLanguage();
   const { isDark } = useTheme();
 
-  const bg = isDark ? "bg-[#0D0D0D]" : "bg-[#F5F5F3]";
-  const textPrimary = isDark ? "text-[#F2F2F0]" : "text-[#0D0D0D]";
-  const textMuted = isDark ? "text-[#F2F2F0]/40" : "text-[#0D0D0D]/40";
-  const surface = isDark ? "bg-[#111111]" : "bg-white";
-  const border = isDark ? "border-[#F2F2F0]/10" : "border-[#0D0D0D]/10";
+  const bg = isDark ? "bg-black" : "bg-[#FAF9F6]";
+  const textPrimary = isDark ? "text-white" : "text-[#0D0D0D]";
+  const textMuted = isDark ? "text-white/40" : "text-black/40";
+  const surface = isDark ? "bg-[#0A0A0A]" : "bg-white/95 backdrop-blur-md shadow-sm";
+  const border = isDark ? "border-white/10" : "border-black/[0.06]";
 
   const faqs = [
     { question: t("faq.q1"), answer: t("faq.a1") },
@@ -88,7 +88,7 @@ export function FAQ() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className={`relative p-12 md:p-20 rounded-[3rem] text-center overflow-hidden border ${isDark ? "bg-[#111111]/50 border-white/5" : "bg-white border-black/5 shadow-sm"}`}
+          className={`relative p-12 md:p-20 rounded-[3rem] text-center overflow-hidden border ${isDark ? "bg-[#0A0A0A]/50 border-white/10" : "bg-white border-black/5 shadow-sm"}`}
         >
           <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none" />
           
