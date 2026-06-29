@@ -157,6 +157,7 @@ export function AquoraProject({ project, onClose }: AquoraProjectProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      data-lenis-prevent
       className="fixed inset-0 z-[150] overflow-y-auto bg-[#f0f4f8] text-[#2d4059] font-['Open_Sans']"
     >
       {/* Background Spheroid */}

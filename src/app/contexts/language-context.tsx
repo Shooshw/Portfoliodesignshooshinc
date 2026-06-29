@@ -244,6 +244,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.sending": "Enviando...",
     "contact.contactPage": "Formulário de contato",
     "contact.calcom": "Agendar reunião",
+    "loader.welcome": "Carregando Universo Criativo...",
+    "loader.transition": "Aguarde um instante...",
   },
   en: {
     // Header
@@ -480,6 +482,8 @@ const translations: Record<Language, Record<string, string>> = {
     "contact.sending": "Sending...",
     "contact.contactPage": "Contact Form",
     "contact.calcom": "Schedule meeting",
+    "loader.welcome": "Loading Creative Universe...",
+    "loader.transition": "Just a moment...",
   },
 };
 

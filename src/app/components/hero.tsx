@@ -1,17 +1,16 @@
 import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "motion/react";
 import { ArrowDown, Mail } from "lucide-react";
-import Hls from "hls.js";
 import { useLanguage } from "../contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
+import { gsap } from "gsap";
 
 export function Hero() {
   const { t } = useLanguage();
   const { isDark } = useTheme();
   
   const containerRef = useRef<HTMLElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const videoSrc = "https://stream.mux.com/T6oQJQ02cQ6N01TR6iHwZkKFkbepS34dkkIc9iukgy400g.m3u8";
+  const canvasRef = useRef<HTMLCanvasElement>(null);
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -21,26 +20,233 @@ export function Hero() {
   const scrollY = useTransform(scrollYProgress, [0, 1], [0, 200]);
 
   useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
+    const c = canvasRef.current;
+    if (!c) return;
 
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(videoSrc);
-      hls.attachMedia(video);
-      hls.on(Hls.Events.MANIFEST_PARSED, () => {
-        video.play().catch((e) => console.log("Auto-play prevented:", e));
-      });
-      return () => {
-        hls.destroy();
+    const ctx = c.getContext("2d");
+    if (!ctx) return;
+
+    let cw = 0;
+    let ch = 0;
+    let dpr = window.devicePixelRatio || 1;
+
+    const T = Math.PI * 2;
+    const m = { x: window.innerWidth / 2, y: window.innerHeight / 2, s: 1.2, x2: window.innerWidth / 2, y2: window.innerHeight / 2 };
+
+    const xTo = gsap.quickTo(m, "x", { duration: 0.8, ease: "power3.out" });
+    const yTo = gsap.quickTo(m, "y", { duration: 0.8, ease: "power3.out" });
+    const sTo = gsap.quickTo(m, "s", { duration: 1.5, ease: "power2.out" });
+    
+    let boxes: Array<{ x: number; y: number; d: number; s: number }> = [];
+
+    // Gerenciador de Estilos da Hero: detecta o tema dinamicamente e otimiza o contraste
+    const getHeroStyles = (dark: boolean) => {
+      return {
+        imgSrc: dark 
+          ? "https://images.unsplash.com/photo-1634017839464-5c339ebe3cb4?q=80&w=2000" // Purple/blue 3D cubic recursive fractal structure
+          : "https://images.unsplash.com/photo-1620121692029-d088224ddc74?q=80&w=2000", // Vibrant high-contrast 3D flow for Light Mode
+        // Cores altamente contrastantes e vibrantes para que os pontos decorativos fiquem perfeitamente visíveis em qualquer tela
+        dotColor: dark 
+          ? "rgba(180, 192, 255, 0.45)" // Blue/purple pastel nítido para fundo escuro
+          : "rgba(200, 57, 43, 0.38)",  // Rubi profundo vibrante com alta legibilidade contra o off-white/cores vibrantes
+        bgOpacity: dark ? 0.22 : 0.12, // Reduzido no claro para garantir harmonia e visibilidade
+        ringColor: dark ? "rgba(255, 255, 255, 0.15)" : "rgba(200, 57, 43, 0.25)", // Anel físico do vidro
+        centerDotColor: dark ? "rgba(255, 255, 255, 0.75)" : "rgba(200, 57, 43, 0.85)", // Ponto guia do ponteiro
+        lensIntensity: dark ? 0.45 : 0.50, // Força de magnificação óptica
+        boxSize: 80, // Grid de alta densidade
+        dots: true,
+        fade: true
       };
-    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
-      video.src = videoSrc;
-      video.addEventListener("loadedmetadata", () => {
-        video.play().catch((e) => console.log("Auto-play prevented:", e));
-      });
+    };
+
+    const props = getHeroStyles(isDark);
+
+    ctx.fillStyle = props.dotColor;
+
+    const img = new Image();
+    img.crossOrigin = "anonymous";
+    img.src = props.imgSrc;
+
+    let isImageLoaded = false;
+    img.onload = () => {
+      isImageLoaded = true;
+      initCanvas();
+    };
+
+    function initImg() {
+      boxes = [];
+      const boxSize = props.boxSize;
+      // Adicionamos margem de segurança para cobrir as bordas da tela inteiramente
+      for (let x = -boxSize; x <= cw + boxSize; x += boxSize) {
+        for (let y = -boxSize; y <= ch + boxSize; y += boxSize) {
+          boxes.push({ x, y, d: 0, s: 0 });
+        }
+      }
     }
-  }, []);
+
+    function initCanvas() {
+      const rect = c.getBoundingClientRect();
+      dpr = window.devicePixelRatio || 1;
+      
+      // Ajusta tamanho físico real considerando DPR para máxima nitidez (Retina ready)
+      c.width = rect.width * dpr;
+      c.height = rect.height * dpr;
+      
+      // Coordenadas lógicas do espaço CSS para o canvas
+      cw = rect.width;
+      ch = rect.height;
+      
+      initImg();
+    }
+
+    function drawImg(box: { x: number; y: number; d: number; s: number }, sx: number, sy: number, sw: number, sh: number) {
+      box.d = Math.hypot(box.x - m.x, box.y - m.y);
+      // O raio da lente de distorção se ajusta de forma proporcional ao viewport do usuário
+      const baseRadius = Math.min(cw, ch) * 0.22;
+      const activeRadius = Math.max(160, baseRadius * m.s);
+      
+      box.s = 1 - gsap.utils.clamp(0, 1, box.d / activeRadius);
+      if (box.s < 0.001) {
+        box.s = 0;
+        return;
+      }
+      
+      // Mapeia de forma 100% proporcional as coordenadas do canvas para a imagem original
+      const normX = box.x / cw;
+      const normY = box.y / ch;
+      const normSizeX = props.boxSize / cw;
+      const normSizeY = props.boxSize / ch;
+
+      const sourceX = sx + normX * sw;
+      const sourceY = sy + normY * sh;
+      const sourceW = normSizeX * sw;
+      const sourceH = normSizeY * sh;
+
+      // Efeito de magnificação esférica realista da lente de vidro
+      const centerX = sourceX + sourceW / 2;
+      const centerY = sourceY + sourceH / 2;
+      const scaledW = sourceW * (1 - box.s * props.lensIntensity);
+      const scaledH = sourceH * (1 - box.s * props.lensIntensity);
+      const originX = centerX - scaledW / 2;
+      const originY = centerY - scaledH / 2;
+
+      if (props.fade) {
+        ctx!.globalAlpha = isDark ? box.s : box.s * 0.95;
+      }
+      
+      ctx!.drawImage(
+        img,
+        originX,
+        originY,
+        scaledW,
+        scaledH,
+        box.x,
+        box.y,
+        props.boxSize,
+        props.boxSize
+      );
+    }
+
+    function drawDots(box: { x: number; y: number; d: number; s: number }) {
+      if (box.s < 0.001) return;
+      ctx!.beginPath();
+      ctx!.arc(box.x, box.y, props.boxSize * 0.16 * box.s, 0, T);
+      ctx!.fill();
+    }
+
+    function update() {
+      if (!isImageLoaded) return;
+      const d = Math.hypot(m.x - m.x2, m.y - m.y2);
+      // Reatividade dinâmica do foco óptico
+      sTo(0.8 + (d / cw) * 4.0); 
+
+      // Configuração de transformação e limpeza limpa do frame Retina
+      ctx!.setTransform(dpr, 0, 0, dpr, 0, 0);
+      ctx!.clearRect(0, 0, cw, ch);
+      
+      // Enquadramento 'cover' matemático centralizado e perfeito da imagem original no canvas
+      const imgRatio = img.naturalWidth / img.naturalHeight;
+      const canvasRatio = cw / ch;
+      let sw = img.naturalWidth;
+      let sh = img.naturalHeight;
+      let sx = 0;
+      let sy = 0;
+
+      if (imgRatio > canvasRatio) {
+        sh = img.naturalHeight;
+        sw = img.naturalHeight * canvasRatio;
+        sx = (img.naturalWidth - sw) / 2;
+        sy = 0;
+      } else {
+        sw = img.naturalWidth;
+        sh = img.naturalWidth / canvasRatio;
+        sx = 0;
+        sy = (img.naturalHeight - sh) / 2;
+      }
+
+      // 1. Desenhar fundo em opacidade controlada
+      ctx!.globalAlpha = props.bgOpacity;
+      ctx!.drawImage(img, sx, sy, sw, sh, 0, 0, cw, ch);
+      
+      // 2. Desenhar caixas sob o efeito de distorção óptica da lente
+      ctx!.globalAlpha = 1;
+      boxes.forEach(box => drawImg(box, sx, sy, sw, sh));
+      
+      // 3. Desenhar pontos de respiro geométricos de alto contraste
+      if (props.fade) ctx!.globalAlpha = 1;
+      if (props.dots) {
+        ctx!.fillStyle = props.dotColor;
+        boxes.forEach(drawDots);
+      }
+
+      // 4. Desenhar anel físico de vidro dinâmico no cursor
+      const baseRadius = Math.min(cw, ch) * 0.22;
+      const activeRadius = Math.max(160, baseRadius * m.s);
+      
+      ctx!.beginPath();
+      ctx!.arc(m.x, m.y, activeRadius, 0, T);
+      ctx!.lineWidth = 3;
+      ctx!.strokeStyle = props.ringColor;
+      ctx!.stroke();
+
+      // 5. Desenhar ponto de mira minimalista
+      ctx!.beginPath();
+      ctx!.arc(m.x, m.y, 4, 0, T);
+      ctx!.fillStyle = props.centerDotColor;
+      ctx!.fill();
+    }
+
+    gsap.ticker.add(update);
+
+    const handlePointerMove = (e: PointerEvent) => {
+      const rect = c.getBoundingClientRect();
+      m.x2 = e.clientX - rect.left;
+      m.y2 = e.clientY - rect.top;
+      xTo(m.x2);
+      yTo(m.y2);
+    };
+
+    const handleResize = () => {
+      initCanvas();
+    };
+
+    const parent = containerRef.current;
+    if (parent) {
+      parent.addEventListener("pointermove", handlePointerMove);
+    }
+    window.addEventListener("resize", handleResize);
+
+    // Inicialização forçada para garantir renderização correta
+    initCanvas();
+
+    return () => {
+      gsap.ticker.remove(update);
+      if (parent) {
+        parent.removeEventListener("pointermove", handlePointerMove);
+      }
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [isDark]);
 
   return (
     <section
@@ -48,23 +254,18 @@ export function Hero() {
       id="hero"
       className={`relative w-full min-h-screen overflow-hidden flex items-center justify-center transition-colors duration-700 ${isDark ? "bg-black text-white" : "bg-[#FAF9F6] text-[#0D0D0D]"}`}
     >
-      {/* Background Video Layer */}
+      {/* Background Canvas Layer */}
       <div className="absolute inset-0 overflow-hidden w-full h-full z-0">
-        <video
-          ref={videoRef}
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-700 ${isDark ? "opacity-60" : "opacity-[0.8]"}`}
+        <canvas
+          ref={canvasRef}
+          className="absolute inset-0 w-full h-full object-cover z-0 pointer-events-none transition-opacity duration-700"
           style={{
-            filter: isDark 
-              ? "none" 
-              : "invert(1) hue-rotate(340deg) saturate(3) brightness(1.02) contrast(1.1)"
+            opacity: isDark ? 0.65 : 0.88,
+            filter: isDark ? "brightness(0.9) contrast(1.1)" : "saturate(1.1) contrast(1.15)"
           }}
-          muted
-          loop
-          playsInline
-          poster="https://images.unsplash.com/photo-1647356191320-d7a1f80ca777?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhYnN0cmFjdCUyMGRhcmslMjB0ZWNobm9sb2d5JTIwbmV1cmFsJTIwbmV0d29ya3xlbnwxfHx8fDE3Njg5NzIyNTV8MA&ixlib=rb-4.1.0&q=80&w=1080"
         />
-        {/* Video Overlay with blur - completely transparent on light mode */}
-        <div className={`absolute inset-0 backdrop-blur-[2px] transition-colors duration-700 ${isDark ? "bg-black/60" : "bg-transparent"}`} />
+        {/* Ambient Overlay */}
+        <div className={`absolute inset-0 pointer-events-none transition-colors duration-700 ${isDark ? "bg-black/45" : "bg-transparent"}`} />
       </div>
 
       {/* Decorative Gradients */}

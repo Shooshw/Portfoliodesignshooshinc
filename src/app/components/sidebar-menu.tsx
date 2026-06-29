@@ -80,6 +80,7 @@ export function Sidebar() {
         initial={{ x: -400 }}
         animate={{ x: isOpen ? 0 : -400 }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
+        data-lenis-prevent
         className={`fixed left-0 top-0 h-full w-[360px] z-[200] pt-24 overflow-y-auto border-r shadow-2xl transition-shadow duration-700 ${sideBg} ${sideBorder} ${
           isOpen ? (isDark ? "shadow-black" : "shadow-black/5") : ""
         }`}

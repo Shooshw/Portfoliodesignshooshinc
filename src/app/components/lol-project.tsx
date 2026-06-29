@@ -149,6 +149,7 @@ export function LolProject({ project, onClose }: LolProjectProps) {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      data-lenis-prevent
       className="fixed inset-0 z-[150] overflow-y-auto bg-[#010a13] text-[#f0e6d2] font-spiegel"
     >
       <button

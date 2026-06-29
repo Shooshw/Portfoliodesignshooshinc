@@ -10,7 +10,6 @@ import {
   FileUser,
   CheckCircle,
   AlertCircle,
-  Loader2,
   Calendar,
   Check,
 } from "lucide-react";
@@ -18,6 +17,7 @@ import { useLanguage } from "../contexts/language-context";
 import { useTheme } from "../contexts/theme-context";
 import { useState } from "react";
 import { useNavigate } from "react-router";
+import { Loader } from "./ui/loader";
 
 const ACCENT = "#C8392B";
 
@@ -323,14 +323,16 @@ export function Contact() {
                     whileTap={{ scale: 0.98 }}
                     type="submit"
                     disabled={formStatus === "loading"}
-                    className="w-full bg-[#C8392B] text-white py-6 rounded-2xl font-sans font-bold text-sm uppercase tracking-widest transition-all shadow-xl shadow-[#C8392B]/10 active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-4"
+                    className="w-full bg-[#C8392B] text-white py-6 rounded-2xl font-sans font-bold text-sm uppercase tracking-widest transition-all shadow-xl shadow-[#C8392B]/10 active:scale-[0.98] disabled:opacity-50 flex items-center justify-center gap-6"
                   >
                     {formStatus === "loading" ? (
-                      <Loader2 size={18} className="animate-spin" />
+                      <Loader className="text-white" />
                     ) : (
-                      <Send size={18} />
+                      <>
+                        <Send size={18} />
+                        <span>{t("contact.submitButton")}</span>
+                      </>
                     )}
-                    {formStatus === "loading" ? t("contact.sending") : t("contact.submitButton")}
                   </motion.button>
 
                   <AnimatePresence>

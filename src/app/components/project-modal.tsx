@@ -107,6 +107,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
+            data-lenis-prevent
             className={`fixed right-0 top-0 h-full w-full max-w-[640px] z-[120] flex flex-col overflow-y-auto shadow-[-8px_0_40px_rgba(0,0,0,0.3)] transition-colors duration-500 ${bg}`}
           >
             {/* Sticky header */}
